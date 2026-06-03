@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --text: #6b6375;
+  --text-b: #000000;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #c41d24;
+  --accent-hover: #9b1a1f;
+  --accent-soft: rgba(196, 29, 36, 0.10);
+  --accent-border: rgba(196, 29, 36, 0.22);
+  --accent-soft-strong: rgba(196, 29, 36, 0.15);
+  --surface-soft: #fdf0f0;
+  --surface-dark: #0d1117;
+  --button-secondary: rgba(255, 255, 255, 0.08);
+  --button-secondary-hover: rgba(255, 255, 255, 0.14);
+  --hero-overlay: rgba(0, 0, 0, 0.7);
+  --hero-gradient-start: rgba(0, 0, 0, 0.92);
+  --hero-gradient-mid: rgba(0, 0, 0, 0.55);
+  --hero-gradient-end: rgba(0, 0, 0, 0.25);
+  --hero-glow: rgba(196, 29, 36, 0.18);
+  --hero-primary-text: #ffffff;
+  --hero-muted-text: rgba(255, 255, 255, 0.6);
+  --hero-badge-text: rgba(255, 255, 255, 0.4);
+  --hero-stroke: #dc2626;
+  --hero-hint: rgba(255, 255, 255, 0.3);
+  --text-grey: #5e5e5e; 
+
+  --footer-bg: #1f2937;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-text-muted: rgba(255, 255, 255, 0.3);
+  --footer-text-hover: rgba(255, 255, 255, 0.7);
+  --footer-social-border: rgba(255, 255, 255, 0.12);
+
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif, Poppins;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+
+ /* --------------------Faqs-------------------- */
+
+.ant-collapse-item {
+  margin-bottom: 20px !important;
+  border-bottom: none !important;
+}
+
+.faq-answer {
+  color: var(--text-grey) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  padding-bottom: 16px !important;
+}
