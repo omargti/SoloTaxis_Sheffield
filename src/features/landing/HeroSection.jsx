@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import BG_IMAGE from "../../assets/sheffield.png";
-import { APP_STORE_URL, PHONE_DISPLAY, PHONE_RAW } from "../../shared/constants/brand";
+import { PHONE_DISPLAY, PHONE_RAW } from "../../shared/constants/brand";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -140,9 +140,7 @@ export default function HeroSection() {
 
           {/* Mobile App */}
           <Button
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/app"
             ariaLabel="Download mobile app"
             className="inline-flex items-center gap-[var(--space-4)] bg-accent text-white px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--accent-hover)]"
           >
