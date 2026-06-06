@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import Button from "../ui/button";
 import Logo from "../../assets/logoo.png";
 
-// ─── Constants (outside component = zero re-creation cost) ────────────────────
+// ─── Constants ────────────────────────────────────────────────────────────
 
 const LINKS = [
   { label: "Ride",     href: "/ride",     icon: "ph:car" },
@@ -66,12 +66,13 @@ const NavLink = memo(({ href, label, active }) => {
       href={href}
       aria-current={active ? "page" : undefined}
       onClick={(e) => { e.preventDefault(); navigate(href); }}
-      className="relative flex items-center h-full px-5 text-sm border-l transition-colors duration-150 group"
+      className="relative flex items-center h-full px-5 border-l transition-colors duration-150 group"
       style={{
         borderColor: "var(--border)",
         color: active ? "var(--accent)" : "var(--text)",
-        fontWeight: active ? "500" : "400",
-        backgroundColor: active ? "transparent" : "transparent"
+        fontSize: "var(--text-body-xs)",
+        fontWeight: active ? "var(--weight-medium)" : "var(--weight-regular)",
+        backgroundColor: "transparent"
       }}
       onMouseEnter={(e) => !active && (e.target.style.color = "var(--text-b)", e.target.style.backgroundColor = "rgba(0, 0, 0, 0.02)")}
       onMouseLeave={(e) => !active && (e.target.style.color = "var(--text)", e.target.style.backgroundColor = "transparent")}
@@ -98,14 +99,14 @@ const BookBtn = memo(({ compact = false, onClick }) => (
     ariaLabel="Book a ride"
     icon="ph:phone-call"
     iconClass={compact ? "w-3.5 h-3.5" : "w-3.5 h-3.5"}
-    className={`flex items-center gap-1.5 rounded-md border-[1.5px] font-medium
+    className="flex p-3 items-center gap-1.5 rounded-md border-[1.5px] font-medium
       transition-all duration-150 active:scale-95 focus-visible:outline-none
-      focus-visible:ring-2 focus-visible:ring-offset-2
-      ${compact ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm"}`}
+      focus-visible:ring-2 focus-visible:ring-offset-2"
     style={{
       borderColor: "var(--text-b)",
       color: "var(--text-b)",
       backgroundColor: "var(--bg)",
+      fontSize: compact ? "var(--text-body-xs)" : "var(--text-body-sm)",
       "--tw-ring-color": "var(--text-b)"
     }}
     onMouseEnter={(e) => {
@@ -134,10 +135,10 @@ export default function Navbar() {
   const toggle   = useCallback(() => setOpen(p => !p), []);
   const goBook   = useCallback(() => { close(); navigate("/booking"); }, [close, navigate]);
 
-  // Focus trap inside drawer
+ 
   useFocusTrap(drawerRef, open);
 
-  // Close drawer on close event dispatched by focus trap ESC
+  
   useEffect(() => {
     const el = drawerRef.current;
     if (!el) return;
@@ -248,11 +249,12 @@ export default function Navbar() {
                     <button
                       onClick={() => { close(); navigate(href); }}
                       aria-current={pathname === href ? "page" : undefined}
-                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+                      className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
                       style={{
                         color: pathname === href ? "var(--accent)" : "var(--text)",
                         backgroundColor: pathname === href ? "var(--accent-soft)" : "transparent",
-                        fontWeight: pathname === href ? "500" : "400",
+                        fontWeight: pathname === href ? "var(--weight-medium)" : "var(--weight-regular)",
+                        fontSize: "var(--text-body-sm)",
                         "--tw-ring-color": "var(--accent)"
                       }}
                       onMouseEnter={(e) => !pathname && (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.03)")}
@@ -273,10 +275,11 @@ export default function Navbar() {
                 ariaLabel="Book a ride"
                 icon="ph:phone-call"
                 iconClass="w-3.75 h-3.75"
-                className="w-full py-2.5 rounded-lg text-sm font-medium transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="w-full py-2.5 rounded-lg font-medium transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "var(--text-b)",
                   color: "var(--bg)",
+                  fontSize: "var(--text-body-sm)",
                   "--tw-ring-color": "var(--text-b)"
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)")}

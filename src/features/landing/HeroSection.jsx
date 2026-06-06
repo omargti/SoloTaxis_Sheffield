@@ -46,7 +46,7 @@ function ScrollHint() {
       <Icon
         icon="ph:mouse-simple-light"
         width={22}
-        className="text-white/30 animate-bounce"
+        className="text-(--hero-scrollhint) animate-bounce"
       />
     </div>
   );
@@ -54,60 +54,37 @@ function ScrollHint() {
 
 export default function HeroSection() {
   return (
-    <section className="relative py-30 overflow-hidden flex items-end">
+    <section className="relative overflow-hidden flex items-end py-[var(--space-24)]">
       
       {/* Background Image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${BG_IMAGE})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      <img
+        src={BG_IMAGE}
+        alt="Sheffield taxi service"
+        className="absolute inset-0 object-cover w-full h-full"
       />
 
       {/* Dark Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "var(--hero-overlay)" }}
-      />
+      <div className="absolute inset-0 bg-hero-overlay" />
 
       {/* Soft Gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to top, var(--hero-gradient-start) 0%, var(--hero-gradient-mid) 45%, var(--hero-gradient-end) 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-hero-gradient" />
 
       {/* Accent Glow */}
-      <div
-        className="absolute left-0 top-0 h-full w-75"
-        style={{
-          background:
-            "linear-gradient(to right, var(--hero-glow), transparent)",
-        }}
-      />
+      <div className="absolute left-0 top-0 h-full w-[var(--hero-glow-width)] bg-hero-glow" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-[var(--space-6)] pb-[var(--space-20)]">
         
         {/* Small Label */}
-        <div className="flex items-center gap-2 mb-6">
-          <span className="w-2 h-2 rounded-full bg-(--accent) animate-pulse" />
-          <span className="text-[11px] uppercase tracking-[3px] font-semibold text-(--accent)">
+        <div className="flex items-center gap-[var(--space-2)] mb-[var(--space-6)]">
+          <span className="w-[var(--space-2)] h-[var(--space-2)] rounded-full bg-accent animate-pulse" />
+          <span className="hero-label uppercase tracking-[var(--tracking-wide)] font-[var(--weight-semibold)]">
             Sheffield Taxi Service
           </span>
         </div>
 
         {/* Heading */}
-        <h1
-          className="text-(--hero-primary-text) font-black leading-[0.92] tracking-tight max-w-4xl"
-          style={{
-            fontSize: "clamp(52px, 8vw, 110px)",
-          }}
-        >
+        <h1 className="max-w-4xl text-hero-primary font-heading font-[var(--weight-extrabold)] leading-[var(--hero-heading-line-height)] tracking-[var(--tracking-tight)] text-[clamp(var(--text-hero-heading-min),8vw,var(--text-hero-heading-max))]">
           Reliable Rides
           <span className="block text-transparent stroke-text">
             Anytime.
@@ -115,29 +92,29 @@ export default function HeroSection() {
         </h1>
 
         {/* Description */}
-        <p className="mt-6 max-w-xl text-(--hero-muted-text) text-[15px] leading-relaxed">
+        <p className="max-w-xl mt-[var(--space-6)] hero-body leading-[var(--leading-relaxed)]">
           Premium taxi service in Sheffield with professional drivers,
           fixed pricing, and fast pickups — available 24/7.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-10">
+        <div className="flex flex-col sm:flex-row gap-[var(--space-4)] mt-[var(--space-10)]">
           
           {/* Call Button */}
           <Button
             href={`tel:${PHONE_RAW}`}
             ariaLabel="Call Sheffield Taxi Service"
-            className="inline-flex items-center gap-4 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-300 text-(--hero-primary-text) px-6 py-4 rounded-2xl font-bold"
+            className="inline-flex items-center gap-[var(--space-4)] bg-accent text-hero-primary px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300"
           >
-            <span className="w-11 h-11 rounded-xl bg-black/20 flex items-center justify-center">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-hero-icon-bg-dark flex items-center justify-center">
               <Icon icon="ph:phone-call-fill" width={20} />
             </span>
 
             <div>
-              <p className="text-[10px] uppercase tracking-[2px] text-(--hero-muted-text)">
+              <p className="hero-button-label uppercase tracking-[var(--tracking-wide)] m-0">
                 Book Now
               </p>
-              <p className="text-[18px] font-black">
+              <p className="hero-button-copy m-0">
                 {PHONE_DISPLAY}
               </p>
             </div>
@@ -147,17 +124,17 @@ export default function HeroSection() {
           <Button
             href="/download"
             ariaLabel="Download mobile app"
-            className="inline-flex items-center gap-4 border border-white/10 bg-(--button-secondary) hover:bg-(--button-secondary-hover) backdrop-blur-md transition-all duration-300 text-(--hero-primary-text) px-6 py-4 rounded-2xl font-bold"
+            className="inline-flex items-center gap-[var(--space-4)] bg-button-secondary text-hero-primary px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] border border-hero-button backdrop-blur-hero-button font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300"
           >
-            <span className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-hero-icon-bg flex items-center justify-center">
               <Icon icon="ph:device-mobile-fill" width={20} />
             </span>
 
             <div>
-              <p className="text-[10px] uppercase tracking-[2px] text-(--hero-badge-text)">
+              <p className="hero-app-label uppercase tracking-[var(--tracking-wide)] m-0">
                 Mobile App
               </p>
-              <p className="text-[18px] font-black">
+              <p className="hero-button-copy m-0">
                 Download
               </p>
             </div>
@@ -165,16 +142,16 @@ export default function HeroSection() {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap gap-5 mt-8">
+        <div className="flex flex-wrap gap-[var(--space-5)] mt-[var(--space-8)]">
           {TRUST_BADGES.map((item) => (
             <div
               key={item}
-              className="flex items-center gap-2 text-(--hero-badge-text) text-[12px] font-medium"
+              className="flex items-center gap-[var(--space-2)] hero-badge font-[var(--weight-medium)]"
             >
               <Icon
                 icon="ph:check-circle-fill"
                 width={14}
-                className="text-(--accent)"
+                className="text-accent"
               />
               {item}
             </div>
@@ -183,13 +160,6 @@ export default function HeroSection() {
       </div>
 
       <ScrollHint />
-
-      {/* Text Stroke */}
-      <style jsx>{`
-        .stroke-text {
-          -webkit-text-stroke: 2px var(--hero-stroke);
-        }
-      `}</style>
     </section>
   );
 }

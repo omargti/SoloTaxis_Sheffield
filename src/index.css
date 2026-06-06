@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --text: #6b6375;
   --text-b: #000000;
   --bg: #fff;
@@ -54,8 +54,469 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "tailwindcss";
+
+:root {
+  /* ==================== Colors ==================== */
+  --text: #6b6375;
+  --text-b: #000000;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #c41d24;
+  --accent-hover: #9b1a1f;
+  --accent-soft: rgba(196, 29, 36, 0.10);
+  --accent-border: rgba(196, 29, 36, 0.22);
+  --accent-soft-strong: rgba(196, 29, 36, 0.15);
+  --surface-soft: #fdf0f0;
+  --surface-white: #ffffff;
+  --surface-white-soft: rgba(255, 255, 255, 0.12);
+  --surface-white-soft-border: rgba(255, 255, 255, 0.14);
+  --surface-white-soft-strong: rgba(255, 255, 255, 0.18);
+  --surface-dark: #0d1117;
+  --surface-dark-strong: rgba(0, 0, 0, 0.8);
+  --button-secondary: rgba(255, 255, 255, 0.08);
+  --button-secondary-hover: rgba(255, 255, 255, 0.14);
+  --hero-overlay: rgba(0, 0, 0, 0.7);
+  --hero-gradient-start: rgba(0, 0, 0, 0.92);
+  --hero-gradient-mid: rgba(0, 0, 0, 0.55);
+  --hero-gradient-end: rgba(0, 0, 0, 0.25);
+  --hero-glow: rgba(196, 29, 36, 0.18);
+  --hero-primary-text: #ffffff;
+  --hero-primary-text-soft: rgba(255, 255, 255, 0.4);
+  --hero-primary-text-softer: rgba(255, 255, 255, 0.6);
+  --hero-muted-text: rgba(255, 255, 255, 0.6);
+  --hero-badge-text: rgba(255, 255, 255, 0.4);
+  --hero-stroke: #dc2626;
+  --hero-hint: rgba(255, 255, 255, 0.3);
+  --hero-scrollhint: rgba(255, 255, 255, 0.3);
+  --hero-icon-bg: rgba(255, 255, 255, 0.1);
+  --hero-icon-bg-dark: rgba(0, 0, 0, 0.2);
+  --hero-button-border: rgba(255, 255, 255, 0.1);
+  --hero-button-border-width: 1px;
+  --hero-button-backdrop-blur: 12px;
+  --hero-button-icon-size: 2.75rem;
+  --hero-stroke-width: 2px;
+  --radius-full: 9999px;
+  --text-hero-heading-min: 3.25rem;
+  --text-hero-heading-max: 6.875rem;
+  --text-hero-button-label: 0.625rem;
+  --text-hero-button-copy: 1.125rem;
+  --text-hero-label: var(--text-micro);
+  --hero-heading-line-height: 0.92;
+  --hero-glow-width: 18.75rem;
+  --radius-xl: 1rem;
+  --text-grey: #5e5e5e;
+
+  --avatar-blue: #185fa5;
+  --avatar-blue-soft: #e6f1fb;
+  --avatar-green: #3b6d11;
+  --avatar-green-soft: #eaf3de;
+  --avatar-amber: #854f0b;
+  --avatar-amber-soft: #faeeda;
+  --avatar-teal: #0f6e56;
+  --avatar-teal-soft: #e1f5ee;
+  --border-soft: rgba(229, 228, 231, 0.8);
+  --button-secondary-hover: rgba(255, 255, 255, 0.14);
+  --hero-overlay: rgba(0, 0, 0, 0.7);
+  --hero-gradient-start: rgba(0, 0, 0, 0.92);
+  --hero-gradient-mid: rgba(0, 0, 0, 0.55);
+  --hero-gradient-end: rgba(0, 0, 0, 0.25);
+  --hero-glow: rgba(196, 29, 36, 0.18);
+  --hero-primary-text: #ffffff;
+  --hero-muted-text: rgba(255, 255, 255, 0.6);
+  --hero-badge-text: rgba(255, 255, 255, 0.4);
+  --hero-stroke: #dc2626;
+  --hero-hint: rgba(255, 255, 255, 0.3);
+  --hero-scrollhint: rgba(255, 255, 255, 0.3);
+  --hero-icon-bg: rgba(255, 255, 255, 0.1);
+  --hero-icon-bg-dark: rgba(0, 0, 0, 0.2);
+  --hero-button-border: rgba(255, 255, 255, 0.1);
+  --hero-button-border-width: 1px;
+  --hero-button-backdrop-blur: 12px;
+  --hero-button-icon-size: 2.75rem;
+  --hero-stroke-width: 2px;
+  --radius-full: 9999px;
+  --text-hero-heading-min: 3.25rem;
+  --text-hero-heading-max: 6.875rem;
+  --text-hero-button-label: 0.625rem;
+  --text-hero-button-copy: 1.125rem;
+  --text-hero-label: var(--text-micro);
+  --hero-heading-line-height: 0.92;
+  --hero-glow-width: 18.75rem;
+  --radius-xl: 1rem;
+  --text-grey: #5e5e5e;
+
+  --footer-bg: #1f2937;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-text-muted: rgba(255, 255, 255, 0.3);
+  --footer-text-hover: rgba(255, 255, 255, 0.7);
+  --footer-social-border: rgba(255, 255, 255, 0.12);
+
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* ==================== Fonts ==================== */
+  /* FIX: Poppins moved before sans-serif (generic must be last) */
+  --sans: system-ui, 'Segoe UI', Roboto, Poppins, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* ==================== Font Sizes ==================== */
+  --text-display-2xl: 4.5rem;    /* 72px */
+  --text-display-xl:  3.75rem;   /* 60px */
+  --text-display-lg:  3rem;      /* 48px */
+
+  --text-h1: 2.5rem;     /* 40px */
+  --text-h2: 2rem;       /* 32px */
+  --text-h3: 1.75rem;    /* 28px */
+  --text-h4: 1.5rem;     /* 24px */
+  --text-h5: 1.25rem;    /* 20px */
+  --text-h6: 1.125rem;   /* 18px */
+
+  --text-body-xl:  1.25rem;    /* 20px */
+  --text-body-lg:  1.125rem;   /* 18px */
+  --text-body-md:  1rem;       /* 16px */
+  --text-body-sm:  0.9375rem;  /* 15px */
+  --text-body-xs:  0.875rem;   /* 14px */
+
+  --text-label:    0.875rem;   /* 14px */
+  --text-caption:  0.8125rem;  /* 13px */
+  --text-overline: 0.75rem;    /* 12px */
+  --text-micro:    0.6875rem;  /* 11px */
+
+  /* ==================== Line Heights ==================== */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose:   1.8;
+
+  /* ==================== Letter Spacing ==================== */
+  --tracking-tighter: -0.04em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:   0.01em;
+  --tracking-wide:     0.06em;
+  --tracking-wider:    0.1em;
+
+  /* ==================== Font Weights ==================== */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* ==================== Footer Tokens ==================== */
+  --text-footer-logo:    1.375rem;    /* 22px */
+  --text-footer-caption: 0.5625rem;   /* 9px  */
+  --text-footer-link:    0.9375rem;   /* 15px */
+  --text-footer-legal:   0.75rem;     /* 12px */
+  --text-footer-cta:     0.8125rem;   /* 13px */
+
+  /* ==================== Spacing ==================== */
+  /* FIX: dots replaced with underscores — dots are invalid in custom property names */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-2_5: 0.625rem;   /* was --space-2.5 ❌ */
+  --space-3:   0.75rem;
+  --space-3_5: 0.875rem;   /* was --space-3.5 ❌ */
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-7:   1.75rem;
+  --space-8:   2rem;
+  --space-9:   2.25rem;
+  --space-10:  2.5rem;
+  --space-0_5: 0.125rem;
+  --space-11: 2.75rem;
+  --space-14:  3.5rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+
+  /* ==================== Radii ==================== */
+  --radius-sm: 0.25rem;
+  --radius-lg: 0.625rem;
+
+  /* ==================== Footer Extended ==================== */
+  --footer-button-min-width:    9.25rem;
+  --footer-cta-bg:              #111827;
+  --footer-cta-text:            #ffffff;
+  --footer-cta-border:          rgba(255, 255, 255, 0.2);
+  --footer-cta-muted:           #9ca3af;
+  --footer-text-muted-soft:     rgba(255, 255, 255, 0.5);
+  --footer-social-icon:         rgba(255, 255, 255, 0.6);
+  --footer-social-hover:        rgba(255, 255, 255, 1);
+  --footer-social-size:         2.125rem;
+  --footer-social-border-hover: rgba(255, 255, 255, 0.4);
+  --footer-social-bg-hover:     rgba(255, 255, 255, 0.07);
+  --footer-quickbar-bg:         rgba(31, 41, 55, 0.95);
+  --footer-quickbar-border:     rgba(255, 255, 255, 0.1);
+  --tracking-footer-label:      0.16em;
+
+  /* ==================== Google Play Icon Colors ==================== */
+  --google-play-icon-green:       #4caf50;
+  --google-play-icon-light-green: #81c784;
+  --google-play-icon-red:         #e53935;
+  --google-play-icon-amber:       #ffc107;
+
+  /* ==================== Base Styles ==================== */
+  /* FIX: expanded font shorthand into individual properties for better var() support */
+  font-size:   var(--text-body-lg);
+  line-height: var(--leading-normal);
+  font-family: var(--sans);
+  letter-spacing: var(--tracking-normal);
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.font-heading {
+  font-family: var(--heading);
+}
+
+.stroke-text {
+  -webkit-text-stroke: var(--hero-stroke-width) var(--hero-stroke);
+}
+
+.hero-label {
+  font-size: var(--text-hero-label);
+  color: var(--accent);
+}
+
+.hero-body {
+  font-size: var(--text-body-sm);
+  color: var(--hero-muted-text);
+}
+
+.hero-button-label {
+  font-size: var(--text-hero-button-label);
+  color: var(--hero-muted-text);
+}
+
+.hero-button-copy {
+  font-size: var(--text-hero-button-copy);
+  font-weight: var(--weight-extrabold);
+}
+
+.hero-app-label {
+  font-size: var(--text-hero-button-label);
+  color: var(--hero-badge-text);
+}
+
+.hero-badge {
+  font-size: var(--text-overline);
+  color: var(--hero-badge-text);
+}
+
+.fs-display-lg {
+  font-size: var(--text-display-lg);
+}
+
+.sm\:fs-display-xl {
+  @media (min-width: 640px) {
+    font-size: var(--text-display-xl);
+  }
+}
+
+.fs-body-sm {
+  font-size: var(--text-body-sm);
+}
+
+.fs-caption {
+  font-size: var(--text-caption);
+}
+
+.fs-h4 {
+  font-size: var(--text-h4);
+}
+
+.fs-micro {
+  font-size: var(--text-micro);
+}
+
+.fs-overline {
+  font-size: var(--text-overline);
+}
+
+.bg-surface-dark {
+  background-color: var(--surface-dark);
+}
+
+.bg-surface-soft {
+  background-color: var(--surface-soft);
+}
+
+.bg-surface-white-soft {
+  background-color: var(--surface-white-soft);
+}
+
+.bg-surface-white-soft-strong {
+  background-color: var(--surface-white-soft-strong);
+}
+
+.bg-surface-white {
+  background-color: var(--surface-white);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-button-secondary {
+  background-color: var(--button-secondary);
+}
+
+.bg-hero-overlay {
+  background-color: var(--hero-overlay);
+}
+
+.bg-hero-gradient {
+  background-image: linear-gradient(to top, var(--hero-gradient-start) 0%, var(--hero-gradient-mid) 45%, var(--hero-gradient-end) 100%);
+}
+
+.bg-hero-glow {
+  background-image: linear-gradient(to right, var(--hero-glow), transparent);
+}
+
+.bg-hero-icon-bg {
+  background-color: var(--hero-icon-bg);
+}
+
+.bg-hero-icon-bg-dark {
+  background-color: var(--hero-icon-bg-dark);
+}
+
+.border-hero-button {
+  border-color: var(--hero-button-border);
+}
+
+.backdrop-blur-hero-button {
+  backdrop-filter: blur(var(--hero-button-backdrop-blur));
+}
+
+.bg-accent-soft-strong {
+  background-color: var(--accent-soft-strong);
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(circle, var(--hero-primary-text) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-primary {
+  color: var(--hero-primary-text);
+}
+
+.text-muted {
+  color: var(--text-grey);
+}
+
+.text-muted-on-dark {
+  color: var(--hero-muted-on-dark);
+}
+
+.text-hero-primary-soft {
+  color: var(--hero-primary-text-soft);
+}
+
+.text-hero-primary-softer {
+  color: var(--hero-primary-text-softer);
+}
+
+.border-accent-border {
+  border-color: var(--accent-border);
+}
+
+.border-surface-white-soft {
+  border-color: var(--surface-white-soft-border);
+}
+
+.bg-surface-dark-strong {
+  background-color: var(--surface-dark-strong);
+}
+
+/* ==================== Responsive Overrides ==================== */
+/* FIX: media queries moved outside :root — nesting @media inside :root is invalid */
+@media (max-width: 1024px) {
+  :root {
+    font-size: var(--text-body-md);
+
+    --text-display-2xl: 3.5rem;
+    --text-display-xl:  3rem;
+    --text-display-lg:  2.5rem;
+
+    --text-h1: 2rem;
+    --text-h2: 1.75rem;
+    --text-h3: 1.5rem;
+    --text-h4: 1.25rem;
+    --text-h5: 1.125rem;
+    --text-h6: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --text-display-2xl: 2.75rem;
+    --text-display-xl:  2.25rem;
+    --text-display-lg:  2rem;
+
+    --text-h1: 1.75rem;
+    --text-h2: 1.5rem;
+    --text-h3: 1.25rem;
+    --text-h4: 1.125rem;
+    --text-h5: 1rem;
+    --text-h6: 0.9375rem;
+  }
+}
+
+/* ==================== FAQs ==================== */
+.ant-collapse-item {
+  margin-bottom: var(--space-5) !important;
+  border-bottom: none !important;
+}
+
+.faq-answer {
+  color: var(--text-grey) !important;
+  font-size: var(--text-body-xs) !important;
+  line-height: var(--leading-relaxed) !important;
+  padding-bottom: var(--space-4) !important;
+}
 
  /* --------------------Faqs-------------------- */
 

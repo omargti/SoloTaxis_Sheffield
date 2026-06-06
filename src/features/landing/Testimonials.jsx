@@ -67,40 +67,37 @@ const TESTIMONIALS = [
 
 // ─── Avatar colors ─────────────────────────────────────────────────────────────
 
-const AVATAR_STYLES = {
-  red:   { bg: "var(--surface-soft)", color: "var(--accent)" },
-  blue:  { bg: "#e6f1fb", color: "#185fa5" },
-  green: { bg: "#eaf3de", color: "#3b6d11" },
-  amber: { bg: "#faeeda", color: "#854f0b" },
-  teal:  { bg: "#e1f5ee", color: "#0f6e56" },
+const AVATAR_CLASSES = {
+  red:   "bg-surface-soft text-(--accent)",
+  blue:  "bg-(--avatar-blue-soft) text-(--avatar-blue)",
+  green: "bg-(--avatar-green-soft) text-(--avatar-green)",
+  amber: "bg-(--avatar-amber-soft) text-(--avatar-amber)",
+  teal:  "bg-(--avatar-teal-soft) text-(--avatar-teal)",
 };
 
 // ─── Sub-components ────────────────────────────────────────────────────────────
 
 const Stars = memo(({ rating }) => {
-  const full  = Math.floor(rating);
-  const half  = rating % 1 >= 0.5;
+  const full = Math.floor(rating);
+  const half = rating % 1 >= 0.5;
   const empty = 5 - full - (half ? 1 : 0);
   return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: full  }).map((_, i) => (
-        <Icon key={`f${i}`} icon="ph:star-fill"      width={13} className="text-amber-400" />
+    <div className="flex gap-(--space-2_5)">
+      {Array.from({ length: full }).map((_, i) => (
+        <Icon key={`f${i}`} icon="ph:star-fill" width={13} className="text-(--accent)" />
       ))}
-      {half && <Icon icon="ph:star-half-fill" width={13} className="text-amber-400" />}
+      {half && <Icon icon="ph:star-half-fill" width={13} className="text-(--accent)" />}
       {Array.from({ length: empty }).map((_, i) => (
-        <Icon key={`e${i}`} icon="ph:star"           width={13} className="text-amber-200" />
+        <Icon key={`e${i}`} icon="ph:star" width={13} className="text-(--accent-border)" />
       ))}
     </div>
   );
 });
 
 const Avatar = memo(({ initials, color }) => {
-  const style = AVATAR_STYLES[color] || AVATAR_STYLES.red;
+  const classes = AVATAR_CLASSES[color] || AVATAR_CLASSES.red;
   return (
-    <div
-      className="flex items-center justify-center w-9 h-9 rounded-full text-xs font-medium shrink-0"
-      style={{ background: style.bg, color: style.color }}
-    >
+    <div className={`flex items-center justify-center w-(--space-9) h-(--space-9) rounded-(--radius-full) text-(--text-micro) font-(--weight-medium) shrink-0 ${classes}`}>
       {initials}
     </div>
   );
@@ -108,50 +105,33 @@ const Avatar = memo(({ initials, color }) => {
 
 const Card = memo(({ t }) => (
   <div
-    className={`relative flex flex-col gap-3 rounded-2xl p-5 transition-all duration-200 group
-      bg-white border hover:border-gray-200 hover:shadow-md
-      ${t.featured
-        ? "border-(--accent) shadow-sm lg:col-span-2"
-        : "border-gray-100"}`}
+    className={`relative flex flex-col gap-(--space-3) rounded-xl p-(--space-5) transition-all duration-200 group bg-surface-white border hover:border-(--accent-border) hover:shadow-md ${t.featured ? "border-(--accent) shadow-sm lg:col-span-2" : "border-(--border)"}`}
   >
-    {/* Featured badge */}
     {t.featured && (
-      <span
-        className="absolute -top-3 left-4 text-white text-[10px] font-medium tracking-widest uppercase px-3 py-1 rounded-full"
-        style={{ background: "var(--accent)" }}
-      >
+      <span className="absolute -top-(--space-3) left-(--space-4) text-white fs-overline font-(--weight-medium) tracking-wider uppercase px-(--space-3) py-(--space-1_5) rounded-(--radius-full) bg-(--accent)">
         Top review
       </span>
     )}
 
-    {/* Quote icon */}
-    <Icon
-      icon="ph:quotes"
-      width={22}
-      style={{ color: "var(--accent)", opacity: 0.55 }}
-      aria-hidden="true"
-    />
+    <Icon icon="ph:quotes" width={22} className="text-(--accent) opacity-60" aria-hidden="true" />
 
-    {/* Review text */}
-    <p className={`text-gray-500 leading-relaxed flex-1 ${t.featured ? "text-[15px]" : "text-[13.5px]"}`}>
+    <p className={`text-muted leading-relaxed flex-1 ${t.featured ? "fs-body-sm" : "fs-caption"}`}>
       {t.text}
     </p>
 
-    {/* Stars */}
     <Stars rating={t.rating} />
 
-    {/* Footer */}
-    <div className="flex items-center gap-2.5 pt-3 border-t border-gray-100">
+    <div className="flex items-center gap-(--space-2_5) pt-(--space-3) border-t border-(--border)">
       <Avatar initials={t.initials} color={t.color} />
       <div className="flex-1 min-w-0">
-        <p className="text-[13px] font-medium text-gray-900 truncate">{t.name}</p>
-        <p className="text-[11px] text-gray-400 flex items-center gap-1 mt-0.5">
+        <p className="fs-caption font-(--weight-medium) text-(--text-b) truncate">{t.name}</p>
+        <p className="fs-micro text-muted flex items-center gap-(--space-1) mt-(--space-0_5)">
           <Icon icon={t.metaIcon} width={11} aria-hidden="true" />
           {t.meta}
         </p>
       </div>
       {t.tag && (
-        <span className="inline-flex items-center gap-1 text-[11px] text-gray-400 bg-gray-50 border border-gray-100 rounded-full px-2.5 py-1 shrink-0">
+        <span className="inline-flex items-center gap-(--space-1) fs-micro text-muted bg-surface-white-soft border border-(--border) rounded-(--radius-full) px-(--space-2_5) py-(--space-1) shrink-0">
           <Icon icon={t.tagIcon} width={11} aria-hidden="true" />
           {t.tag}
         </span>
@@ -161,10 +141,10 @@ const Card = memo(({ t }) => (
 ));
 
 const StatCard = memo(({ stat }) => (
-  <div className="flex flex-col items-center gap-1 bg-gray-50 rounded-xl px-5 py-4">
-    <Icon icon={stat.icon} width={18} style={{ color: "var(--accent)" }} aria-hidden="true" />
-    <span className="text-2xl font-semibold" style={{ color: "var(--accent)" }}>{stat.value}</span>
-    <span className="text-[11px] text-gray-400 tracking-wide uppercase">{stat.label}</span>
+  <div className="flex flex-col items-center gap-(--space-1) bg-surface-white-soft rounded-xl px-(--space-5) py-(--space-4)">
+    <Icon icon={stat.icon} width={18} className="text-(--accent)" aria-hidden="true" />
+    <span className="fs-h4 font-(--weight-semibold) text-(--accent)">{stat.value}</span>
+    <span className="fs-micro text-muted tracking-wide uppercase">{stat.label}</span>
   </div>
 ));
 
@@ -172,52 +152,38 @@ const StatCard = memo(({ stat }) => (
 
 export default function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 bg-white" aria-labelledby="testimonials-heading">
+    <section className="py-(--space-20) px-(--space-4) sm:px-(--space-6) bg-surface-white" aria-labelledby="testimonials-heading">
       <div className="max-w-5xl mx-auto">
 
-        {/* Header */}
-        <div className="text-center mb-12">
-          <span
-            className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase rounded-full px-3.5 py-1.5 mb-4"
-            style={{ background: "var(--surface-soft)", color: "var(--accent)", border: "0.5px solid var(--accent-border)" }}
-          >
+        <div className="text-center mb-(--space-11)">
+          <span className="inline-flex items-center gap-(--space-2_5) fs-micro font-(--weight-medium) tracking-wider uppercase rounded-(--radius-full) px-(--space-3_5) py-(--space-1_5) mb-(--space-4) bg-surface-soft text-(--accent) border border-(--accent-border)">
             <Icon icon="ph:seal-check-fill" width={13} aria-hidden="true" />
             Trusted by thousands
           </span>
 
-          <h2
-            id="testimonials-heading"
-            className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-none mb-3"
-          >
-            Riders love{" "}
-            <span style={{ color: "var(--accent)" }}>SoloTaxis</span>
+          <h2 id="testimonials-heading" className="fs-display-lg sm:fs-display-xl font-heading font-(--weight-bold) text-(--text-b) tracking-tight leading-none mb-(--space-3)">
+            Riders love <span className="text-(--accent)">SoloTaxis</span>
           </h2>
 
-          <p className="text-gray-400 text-[15px] max-w-sm mx-auto">
+          <p className="text-muted fs-body-sm max-w-sm mx-auto">
             Honest reviews from real passengers across every route.
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto mb-12">
+        <div className="grid grid-cols-3 gap-(--space-3) max-w-sm mx-auto mb-(--space-11)">
           {STATS.map((s) => <StatCard key={s.label} stat={s} />)}
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-(--space-4) auto-rows-fr">
           {TESTIMONIALS.map((t) => <Card key={t.id} t={t} />)}
         </div>
 
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-12">
-          <button
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-medium transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2"
-            style={{ background: "var(--accent)" }}
-          >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-(--space-3) mt-(--space-11)">
+          <button className="inline-flex items-center gap-(--space-2) px-(--space-6) py-(--space-3) rounded-xl text-(--hero-primary-text) fs-body-sm font-(--weight-medium) bg-(--accent) transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2">
             <Icon icon="ph:phone-call" width={15} aria-hidden="true" />
             Book your ride
           </button>
-          <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-gray-500 text-sm border border-gray-200 bg-white hover:bg-gray-50 transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300">
+          <button className="inline-flex items-center gap-(--space-2) px-(--space-6) py-(--space-3) rounded-xl text-muted fs-body-sm border border-(--border) bg-surface-white hover:bg-surface-white-soft transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--border)">
             <Icon icon="ph:chat-circle-text" width={15} aria-hidden="true" />
             See all reviews
           </button>

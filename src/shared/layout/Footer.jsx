@@ -1,5 +1,7 @@
 import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
+import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
+import AppStoreBadge from "../../assets/soloTaxis-ios-app.webp";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
@@ -93,13 +95,14 @@ function FooterLogo() {
     <a
       href="/"
       aria-label="soloTaxis — back to homepage"
-      className="
-        font-['Syne',sans-serif] text-[22px] font-extrabold
-        text-white tracking-tight select-none
-        focus-visible:outline-none focus-visible:ring-2
-        rounded-sm
-      "
+      className="select-none focus-visible:outline-none focus-visible:ring-2"
       style={{
+        fontFamily: "var(--heading)",
+        fontSize: "var(--text-footer-logo)",
+        fontWeight: "var(--weight-extrabold)",
+        letterSpacing: "var(--tracking-tight)",
+        color: "var(--bg)",
+        borderRadius: "var(--radius-sm)",
         "--tw-ring-color": "var(--accent)",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
@@ -119,23 +122,29 @@ function AppStoreButton() {
       rel="noopener noreferrer"
       ariaLabel="Download soloTaxis on the App Store"
       icon="ph:apple-logo"
+      imgSrc={GooglePlayBadge}
       iconClass="w-5.5 h-5.5"
-      className="
-        px-4 py-2.5 min-w-37
-        border rounded-[10px] text-white
-        transition-all duration-150
-        focus-visible:outline-none focus-visible:ring-2
-        focus-visible:ring-offset-2
-      "
+      className="transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       style={{
-        borderColor: "rgba(255, 255, 255, 0.2)",
-        "--tw-ring-color": "white",
+        padding: "var(--space-2_5) var(--space-4)",
+        minWidth: "var(--footer-button-min-width)",
+        borderColor: "var(--footer-cta-border)",
+        borderRadius: "var(--radius-lg)",
+        color: "var(--bg)",
+        backgroundColor: "transparent",
+        fontFamily: "var(--sans)",
+        lineHeight: "var(--leading-tight)",
+        "--tw-ring-color": "var(--bg)",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
     >
-      <span className="flex flex-col leading-tight">
-        <span className="text-[9px] uppercase tracking-wide" style={{ color: "rgba(255, 255, 255, 0.5)" }}>Download on the</span>
-        <span className="text-[14px] font-semibold">App Store</span>
+      <span className="flex flex-col" style={{ lineHeight: "var(--leading-tight)" }}>
+        <span style={{ color: "var(--footer-text-muted-soft)", fontSize: "var(--text-footer-caption)", letterSpacing: "var(--tracking-wide)", textTransform: "uppercase" }}>
+          Download on the
+        </span>
+        <span style={{ fontSize: "var(--text-body-sm)", fontWeight: "var(--weight-semibold)" }}>
+          App Store
+        </span>
       </span>
     </Button>
   );
@@ -149,16 +158,17 @@ function GooglePlayButton() {
       target="_blank"
       rel="noopener noreferrer"
       ariaLabel="Get soloTaxis on Google Play"
-      className="
-        px-4 py-2.5 min-w-37
-        border rounded-[10px] text-white
-        transition-all duration-150
-        focus-visible:outline-none focus-visible:ring-2
-        focus-visible:ring-offset-2
-      "
+      className="transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       style={{
-        borderColor: "rgba(255, 255, 255, 0.2)",
-        "--tw-ring-color": "white",
+        padding: "var(--space-2_5) var(--space-4)",
+        minWidth: "var(--footer-button-min-width)",
+        borderColor: "var(--footer-cta-border)",
+        borderRadius: "var(--radius-lg)",
+        color: "var(--bg)",
+        backgroundColor: "transparent",
+        fontFamily: "var(--sans)",
+        lineHeight: "var(--leading-tight)",
+        "--tw-ring-color": "var(--bg)",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
     >
@@ -169,14 +179,18 @@ function GooglePlayButton() {
         aria-hidden="true"
         className="shrink-0"
       >
-        <path d="M3 20.5v-17l17 8.5-17 8.5z" fill="#4CAF50" />
-        <path d="M3 3.5l9.5 9.5L3 20.5V3.5z" fill="#81C784" />
-        <path d="M3 3.5l9.5 9.5 4.5-4.5L3 3.5z" fill="#E53935" />
-        <path d="M3 20.5l9.5-9.5 4.5 4.5L3 20.5z" fill="#FFC107" />
+        <path d="M3 20.5v-17l17 8.5-17 8.5z" fill="var(--google-play-icon-green)" />
+        <path d="M3 3.5l9.5 9.5L3 20.5V3.5z" fill="var(--google-play-icon-light-green)" />
+        <path d="M3 3.5l9.5 9.5 4.5-4.5L3 3.5z" fill="var(--google-play-icon-red)" />
+        <path d="M3 20.5l9.5-9.5 4.5 4.5L3 20.5z" fill="var(--google-play-icon-amber)" />
       </svg>
-      <span className="flex flex-col leading-tight">
-        <span className="text-[9px] uppercase tracking-wide" style={{ color: "rgba(255, 255, 255, 0.5)" }}>Get it on</span>
-        <span className="text-[14px] font-semibold">Google Play</span>
+      <span className="flex flex-col" style={{ lineHeight: "var(--leading-tight)" }}>
+        <span style={{ color: "var(--footer-text-muted-soft)", fontSize: "var(--text-footer-caption)", letterSpacing: "var(--tracking-wide)", textTransform: "uppercase" }}>
+          Get it on
+        </span>
+        <span style={{ fontSize: "var(--text-body-sm)", fontWeight: "var(--weight-semibold)" }}>
+          Google Play
+        </span>
       </span>
     </Button>
   );
@@ -186,21 +200,35 @@ function GooglePlayButton() {
 function NavColumn({ label, links }) {
   return (
     <div>
-      <h3 className="text-[10px] uppercase tracking-[2.5px] font-medium mb-4.5" style={{ color: "var(--footer-text-muted)" }}>
+      <h3
+        className="focus-visible:outline-none focus-visible:ring-2"
+        style={{
+          color: "var(--footer-text-muted)",
+          fontSize: "var(--text-footer-caption)",
+          letterSpacing: "var(--tracking-footer-label)",
+          fontWeight: "var(--weight-medium)",
+          textTransform: "uppercase",
+          marginBottom: "var(--space-4)"
+        }}
+      >
         {label}
       </h3>
-      <ul role="list" className="flex flex-col gap-2.75">
+      <ul role="list" className="flex flex-col" style={{ gap: "var(--space-2_5)" }}>
         {links.map(({ label: linkLabel, href }) => (
           <li key={href}>
             <a
               href={href}
-              className="text-[15px] text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-sm"
+              className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
+                color: "var(--bg)",
+                fontSize: "var(--text-footer-link)",
+                fontWeight: "var(--weight-regular)",
+                borderRadius: "var(--radius-sm)",
                 "--tw-ring-color": "var(--accent)",
                 "--tw-ring-offset-color": "var(--footer-bg)"
               }}
               onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
-              onMouseLeave={(e) => (e.target.style.color = "white")}
+              onMouseLeave={(e) => (e.target.style.color = "var(--bg)")}
             >
               {linkLabel}
             </a>
@@ -219,22 +247,26 @@ function SocialButton({ label, href, icon }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-8.5 h-8.5 flex items-center justify-center border rounded-lg transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      className="flex items-center justify-center border transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       style={{
+        width: "var(--footer-social-size)",
+        height: "var(--footer-social-size)",
         borderColor: "var(--footer-social-border)",
-        color: "rgba(255, 255, 255, 0.6)",
+        color: "var(--footer-social-icon)",
+        borderRadius: "var(--radius-lg)",
+        backgroundColor: "transparent",
         "--tw-ring-color": "white",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
       onMouseEnter={(e) => {
-        e.target.style.borderColor = "rgba(255, 255, 255, 0.4)";
-        e.target.style.backgroundColor = "rgba(255, 255, 255, 0.07)";
-        e.target.style.color = "white";
+        e.target.style.borderColor = "var(--footer-social-border-hover)";
+        e.target.style.backgroundColor = "var(--footer-social-bg-hover)";
+        e.target.style.color = "var(--footer-social-hover)";
       }}
       onMouseLeave={(e) => {
         e.target.style.borderColor = "var(--footer-social-border)";
         e.target.style.backgroundColor = "transparent";
-        e.target.style.color = "rgba(255, 255, 255, 0.6)";
+        e.target.style.color = "var(--footer-social-icon)";
       }}
     >
       <Icon icon={icon} width={15} height={15} aria-hidden="true" />
@@ -249,10 +281,12 @@ export function StickyBookBar() {
   return (
     <div
       aria-label="Quick booking bar"
-      className="sticky bottom-0 z-50 backdrop-blur-sm flex items-center justify-center gap-3 px-4 py-3 lg:hidden"
+      className="sticky bottom-0 z-50 backdrop-blur-sm flex items-center justify-center lg:hidden"
       style={{
-        backgroundColor: "rgba(31, 41, 55, 0.95)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.1)"
+        gap: "var(--space-3)",
+        padding: "var(--space-3) var(--space-4)",
+        backgroundColor: "var(--footer-quickbar-bg)",
+        borderTop: "1px solid var(--footer-quickbar-border)"
       }}
     >
       <Button
@@ -260,28 +294,40 @@ export function StickyBookBar() {
         ariaLabel={`Call soloTaxis on ${PHONE_DISPLAY}`}
         icon="ph:phone-call"
         iconClass="w-3.75 h-3.75"
-        className="flex-1 px-4 py-2.5 rounded-lg text-[13px] font-medium justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="flex-1 rounded-lg justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
-          backgroundColor: "white",
-          color: "#111827",
-          "--tw-ring-color": "#111827",
+          padding: "var(--space-2_5) var(--space-4)",
+          backgroundColor: "var(--bg)",
+          color: "var(--text-b)",
+          fontSize: "var(--text-footer-cta)",
+          fontWeight: "var(--weight-medium)",
+          borderRadius: "var(--radius-lg)",
+          "--tw-ring-color": "var(--text-b)",
           "--tw-ring-offset-color": "var(--footer-bg)"
         }}
       >
-        <span style={{ color: "#9ca3af", fontWeight: "normal" }}>Book on</span>
-        <span style={{ fontWeight: "600" }}>{PHONE_DISPLAY}</span>
+        <span style={{ color: "var(--footer-cta-muted)", fontWeight: "var(--weight-regular)", fontSize: "var(--text-footer-caption)" }}>
+          Book on
+        </span>
+        <span style={{ fontWeight: "var(--weight-semibold)", fontSize: "var(--text-footer-cta)" }}>
+          {PHONE_DISPLAY}
+        </span>
       </Button>
       <Button
         href={APP_STORE_URL}
         ariaLabel="Download the soloTaxis app"
         icon="ph:download-simple"
         iconClass="w-3.75 h-3.75"
-        className="flex-1 px-4 py-2.5 rounded-lg text-[13px] font-medium justify-center border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="flex-1 rounded-lg justify-center border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
-          backgroundColor: "#1f2937",
-          color: "white",
-          borderColor: "rgba(255, 255, 255, 0.2)",
-          "--tw-ring-color": "white",
+          padding: "var(--space-2_5) var(--space-4)",
+          backgroundColor: "var(--footer-cta-bg)",
+          color: "var(--footer-cta-text)",
+          fontSize: "var(--text-footer-cta)",
+          fontWeight: "var(--weight-medium)",
+          borderRadius: "var(--radius-lg)",
+          borderColor: "var(--footer-cta-border)",
+          "--tw-ring-color": "var(--footer-cta-text)",
           "--tw-ring-offset-color": "var(--footer-bg)"
         }}
       >
@@ -297,15 +343,23 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="font-['DM_Sans',sans-serif]"
-      style={{ backgroundColor: "var(--footer-bg)" }}
+      className=""
+      style={{ backgroundColor: "var(--footer-bg)", fontFamily: "var(--sans)" }}
     >
 
       {/* ── Top row: Logo + App store buttons ── */}
-      <div className="max-w-6xl mx-auto px-8 py-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-b" style={{ borderColor: "var(--footer-border)" }}>
+      <div
+        className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between border-b"
+        style={{
+          padding: "var(--space-14) var(--space-8)",
+          gap: "var(--space-8)",
+          borderColor: "var(--footer-border)"
+        }}
+      >
         <FooterLogo />
         <div
-          className="flex flex-col sm:flex-row gap-3"
+          className="flex flex-col sm:flex-row"
+          style={{ gap: "var(--space-3)" }}
           aria-label="Download the soloTaxis app"
         >
           <AppStoreButton />
@@ -316,10 +370,13 @@ export default function Footer() {
       {/* ── Navigation columns ── */}
       <nav
         aria-label="Footer navigation"
-        className="max-w-6xl mx-auto px-8 py-10 border-b"
-        style={{ borderColor: "var(--footer-border)" }}
+        className="max-w-6xl mx-auto"
+        style={{
+          padding: "var(--space-10) var(--space-8)",
+          borderBottom: "1px solid var(--footer-border)"
+        }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-4" style={{ gap: "var(--space-10)" }}>
           {NAV_COLUMNS.map((col) => (
             <NavColumn key={col.label} label={col.label} links={col.links} />
           ))}
@@ -327,24 +384,35 @@ export default function Footer() {
       </nav>
 
       {/* ── Bottom bar: copyright + legal + social ── */}
-      <div className="max-w-6xl mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 flex-wrap">
+      <div
+        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between flex-wrap"
+        style={{
+          padding: "var(--space-6) var(--space-8)",
+          gap: "var(--space-4)"
+        }}
+      >
 
         {/* Copyright */}
-        <p className="text-[12px] order-3 md:order-1" style={{ color: "var(--footer-text-muted)" }}>
+        <p style={{ color: "var(--footer-text-muted)", fontSize: "var(--text-footer-legal)" }}>
           &copy; {CURRENT_YEAR} soloTaxis Ltd. All rights reserved.
         </p>
 
         {/* Legal links */}
         <nav
           aria-label="Legal links"
-          className="flex flex-wrap justify-center gap-x-5 gap-y-1 order-2"
+          className="flex flex-wrap justify-center"
+          style={{ columnGap: "var(--space-5)", rowGap: "var(--space-1)" }}
         >
           {LEGAL_LINKS.map(({ label, href }) => (
             <a
               key={href}
               href={href}
-              className="text-[12px] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 rounded-sm"
-              style={{ color: "var(--footer-text-muted)" }}
+              className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 rounded-sm"
+              style={{
+                color: "var(--footer-text-muted)",
+                fontSize: "var(--text-footer-legal)",
+                borderRadius: "var(--radius-sm)"
+              }}
               onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
               onMouseLeave={(e) => (e.target.style.color = "var(--footer-text-muted)")}
             >
@@ -356,7 +424,8 @@ export default function Footer() {
         {/* Social icons */}
         <div
           aria-label="Social media"
-          className="flex gap-2 order-1 md:order-3"
+          className="flex"
+          style={{ gap: "var(--space-2)" }}
         >
           {SOCIAL_LINKS.map((social) => (
             <SocialButton key={social.href} {...social} />
