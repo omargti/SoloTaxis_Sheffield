@@ -150,7 +150,7 @@ export function RideSection() {
             <div className="flex flex-wrap gap-3">
               <PhoneButton />
               <StoreButton
-                href={APP_STORE_URL}
+                href="/app"
                 icon="ph:download-simple"
                 label="Download App"
                 sub="Get the"
