@@ -11,7 +11,7 @@ const STATS = [
 
 const About = () => {
   return (
-    <section className="my-[var(--space-20)] px-[var(--space-4)]" id="about">
+    <section className="py-20 px-4" id="about">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-[var(--space-14)]">
 
@@ -23,12 +23,12 @@ const About = () => {
 
             <img
               src={AboutImg}
-              alt="SoloTaxis team and fleet in Sheffield"
+              alt="Solo Taxis team and fleet in Sheffield"
               className="block w-full"
             />
 
             {/* Floating badge */}
-            <div className="absolute -bottom-[var(--space-10)] left-[var(--space-5)] z-20 flex items-center gap-[var(--space-2_5)] bg-surface-white rounded-[var(--radius-xl)] shadow-md px-[var(--space-4)] py-[var(--space-3)] border border-(--border)">
+            <div className="absolute -bottom-10 left-5 z-20 flex items-center gap-2.5 card px-4 py-3">
               <div className="w-[var(--space-9)] h-[var(--space-9)] rounded-xl flex items-center justify-center shrink-0 bg-surface-soft">
                 <Icon icon="ph:map-pin-fill" width={18} className="text-(--accent)" aria-hidden="true" />
               </div>
@@ -43,35 +43,36 @@ const About = () => {
           <div className="flex-1">
 
             {/* Eyebrow */}
-            <span className="inline-flex items-center gap-[var(--space-2_5)] text-(--text-micro) font-[var(--weight-medium)] tracking-[var(--tracking-wider)] uppercase rounded-[var(--radius-full)] px-[var(--space-3_5)] py-[var(--space-1_5)] mb-[var(--space-5)] bg-surface-soft text-(--accent) border border-(--accent-border)">
+            <span className="section-eyebrow mb-5">
               <Icon icon="ph:info" width={12} aria-hidden="true" />
               About Us
             </span>
 
-            <h2 className="text-(--text-display-lg) font-heading font-[var(--weight-bold)] text-(--text-b) tracking-[var(--tracking-tight)] leading-[var(--leading-tight)] mb-[var(--space-5)]">
-              Sheffield's most <br className="hidden sm:block" />
-              <span className="text-(--accent)">trusted</span> taxi service
+            <h2 className="section-heading mb-5">
+              Your local <br className="hidden sm:block" />
+              <span className="text-accent">Sheffield</span> taxi firm
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-4)]">
-              SoloTaxis is Sheffield's most trusted taxi and private hire service,
-              with hundreds of active driver-partners on the road every day.
+              Solo Taxis is a locally based taxi and private hire company serving Sheffield
+              and the surrounding area. We are proud to be part of the community we serve — connecting
+              passengers with licensed, professional drivers who know the city inside and out.
+            </p>
+            <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-4)]">
+              Whether you need a quick ride across town, a pre-booked airport transfer, or a
+              reliable lift home after a night out, we make getting around simple. Book by phone,
+              online, or through our app — and enjoy fixed, transparent fares with service you
+              can count on, 24 hours a day.
             </p>
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-8)]">
-              Our tech-driven, on-demand mobility platform supports our{' '}
-              <strong className="font-[var(--weight-semibold)] text-(--accent)">
-                local Sheffield community
-              </strong>
-              , helping passengers and drivers thrive — 24 hours a day, 7 days a week.
+              At Solo Taxis, we believe great taxi service starts locally: friendly drivers,
+              fair pricing, and a team that is always here when Sheffield needs us.
             </p>
 
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-[var(--space-3)] mb-[var(--space-8)]">
               {STATS.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-[var(--space-3)] bg-surface-white-soft border border-(--border) rounded-[var(--radius-xl)] px-[var(--space-4)] py-[var(--space-3)]"
-                >
+                <div key={s.label} className="flex items-center gap-3 card px-4 py-3">
                   <div className="w-[var(--space-9)] h-[var(--space-9)] rounded-xl flex items-center justify-center shrink-0 bg-surface-soft">
                     <Icon icon={s.icon} width={17} className="text-(--accent)" aria-hidden="true" />
                   </div>
@@ -84,12 +85,9 @@ const About = () => {
             </div>
 
             {/* CTA */}
-            <Button
-              onClick={() => {}}
-              className="inline-flex items-center gap-[var(--space-2)] !text-white text-(--text-body-xs) font-[var(--weight-medium)] px-[var(--space-7)] py-[var(--space-3_5)] rounded-[var(--radius-xl)] transition-all duration-200 active:scale-95 bg-accent"
-            >
+            <Button onClick={() => {}} className="btn-primary">
               <Icon icon="ph:arrow-right" width={15} aria-hidden="true" />
-              More about SoloTaxis
+              More about Solo Taxis
             </Button>
 
           </div>

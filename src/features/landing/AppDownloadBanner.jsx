@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
+import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL } from "../../shared/constants/brand";
 
-const APP_DOWNLOAD_URL = "https://apps.apple.com/app/solotaxis";
 const DRIVE_APPLY_URL  = "/drive/apply";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -21,14 +21,7 @@ const DRIVER_FEATURES = [
 
 function Eyebrow({ icon, text }) {
   return (
-    <span
-      className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-widest uppercase rounded-full px-3.5 py-1.5 mb-5"
-      style={{
-        background: "#fdf0f0",
-        color: "var(--accent)",
-        border: "0.5px solid #f5bfbf",
-      }}
-    >
+    <span className="section-eyebrow mb-5">
       <Icon icon={icon} width={12} aria-hidden="true" />
       {text}
     </span>
@@ -37,12 +30,9 @@ function Eyebrow({ icon, text }) {
 
 function Feature({ icon, text }) {
   return (
-    <li className="flex items-center gap-3 text-[13.5px] text-gray-500">
-      <span
-        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-        style={{ background: "#fdf0f0" }}
-      >
-        <Icon icon={icon} width={14} style={{ color: "var(--accent)" }} aria-hidden="true" />
+    <li className="flex items-center gap-3 text-[13.5px] text-muted">
+      <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 bg-[var(--color-surface-2)]">
+        <Icon icon={icon} width={14} className="text-accent" aria-hidden="true" />
       </span>
       {text}
     </li>
@@ -53,13 +43,15 @@ function StoreBtn({ href, icon, label, sub }) {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+      className="btn-primary !py-3 !px-5 inline-flex items-center gap-3"
     >
-      <Icon icon={icon} width={20} className="text-gray-800 shrink-0" aria-hidden="true" />
+      <Icon icon={icon} width={20} className="shrink-0" aria-hidden="true" />
       <div className="text-left">
-        <p className="text-[10px] text-gray-400 leading-none mb-0.5">Download on</p>
-        <p className="text-[13px] font-semibold text-gray-900 leading-none">{sub}</p>
+        <p className="text-[10px] uppercase tracking-wider opacity-90 leading-none mb-0.5">Download on</p>
+        <p className="text-[13px] font-semibold leading-none">{sub}</p>
       </div>
     </a>
   );
@@ -69,7 +61,7 @@ function StoreBtn({ href, icon, label, sub }) {
 
 function RiderPanel() {
   return (
-    <div className="relative flex flex-col justify-between gap-8 p-10 bg-white overflow-hidden">
+    <div className="relative flex flex-col justify-between gap-8 p-10 bg-[var(--color-surface)] overflow-hidden border-r border-[var(--color-border)]">
 
       {/* Watermark */}
       <Icon
@@ -83,17 +75,32 @@ function RiderPanel() {
       <div className="relative z-10">
         <Eyebrow icon="ph:device-mobile" text="Ride with us" />
 
-        <h2
-          id="download-heading"
-          className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight mb-3"
-        >
+        <h2 id="download-heading" className="section-heading text-2xl sm:text-3xl mb-3">
           Your ride,<br />
-          <span style={{ color: "var(--accent)" }}>on demand.</span>
+          <span className="text-accent">on demand.</span>
         </h2>
 
-        <p className="text-[14.5px] text-gray-400 leading-relaxed max-w-xs mb-7">
+        <p className="text-[14.5px] text-muted leading-relaxed max-w-xs mb-7">
           Book instantly across Sheffield. Track your driver in real-time and
-          arrive in comfort — every single time.
+          arrive in comfort — every single time. Download our app on{" "}
+          <a
+            href={GOOGLE_PLAY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent-hover)] transition-colors"
+          >
+            Google Play Store
+          </a>{" "}
+          or the{" "}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--accent)] underline underline-offset-2 hover:text-[var(--accent-hover)] transition-colors"
+          >
+            App Store
+          </a>
+          .
         </p>
 
         <ul className="space-y-3 mb-8">
@@ -106,15 +113,15 @@ function RiderPanel() {
       {/* Store buttons */}
       <div className="flex flex-wrap gap-3 relative z-10">
         <StoreBtn
-          href={APP_DOWNLOAD_URL}
+          href={APP_STORE_URL}
           icon="ph:apple-logo"
-          label="Download SoloTaxis on the App Store"
+          label={`Download ${BRAND_NAME} on the App Store`}
           sub="App Store"
         />
         <StoreBtn
-          href={APP_DOWNLOAD_URL}
+          href={GOOGLE_PLAY_URL}
           icon="ph:google-play-logo"
-          label="Download SoloTaxis on Google Play"
+          label={`Download ${BRAND_NAME} on Google Play`}
           sub="Google Play"
         />
       </div>
@@ -127,8 +134,7 @@ function RiderPanel() {
 function DriverPanel() {
   return (
     <div
-      className="relative flex flex-col justify-between gap-8 p-10 overflow-hidden"
-      style={{ background: "var(--accent)" }}
+      className="relative flex flex-col justify-between gap-8 p-10 overflow-hidden bg-[var(--color-primary)]"
     >
       {/* Grid pattern overlay */}
       <div
@@ -166,7 +172,7 @@ function DriverPanel() {
         </h2>
 
         <p className="text-[14.5px] text-white/70 leading-relaxed max-w-xs mb-7">
-          Partner with SoloTaxis and start earning on your schedule. Immediate
+          Partner with {BRAND_NAME} and start earning on your schedule. Immediate
           opportunities available across Sheffield.
         </p>
 
@@ -184,12 +190,8 @@ function DriverPanel() {
 
       {/* CTA */}
       <div className="relative z-10">
-        <a
-          href={DRIVE_APPLY_URL}
-          aria-label="Apply to drive with SoloTaxis"
-          className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-white font-semibold text-sm transition-all duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 hover:bg-gray-50 group"
-          style={{ color: "var(--accent)" }}
-        >
+        <a href={DRIVE_APPLY_URL} aria-label={`Apply to drive with ${BRAND_NAME}`}
+          className="btn-primary group inline-flex items-center gap-2.5">
           Apply to drive
           <Icon
             icon="ph:arrow-right"
@@ -211,7 +213,7 @@ export default function DownloadDriveSection() {
       aria-labelledby="download-heading"
       className="my-20 px-4"
     >
-      <div className=" mx-auto  overflow-hidden border border-gray-100 shadow-sm grid grid-cols-1 lg:grid-cols-2">
+      <div className="max-w-6xl mx-auto overflow-hidden card grid grid-cols-1 lg:grid-cols-2 !p-0">
         <RiderPanel />
         <DriverPanel />
       </div>

@@ -9,10 +9,10 @@ const Faq = () => {
   const items = [
     {
       key: "1",
-      label: "How do I book a ride with SoloTaxis?",
+      label: "How do I book a ride with Solo Taxis?",
       children: (
         <p className="faq-answer">
-          You can easily book a ride in Sheffield with the SoloTaxis app, or call us on{" "}
+          You can easily book a ride in Sheffield with the Solo Taxis app, or call us on{" "}
           <span className="text-(--accent) font-medium">0114 463 4444</span>.
         </p>
       ),
@@ -22,14 +22,14 @@ const Faq = () => {
       label: "What is the best Uber alternative in Sheffield?",
       children: (
         <p className="faq-answer">
-          SoloTaxis is a fantastic alternative to Uber in Sheffield. The SoloTaxis app is
+          Solo Taxis is a fantastic alternative to Uber in Sheffield. The Solo Taxis app is
           easy-to-use, and delivers quick response times at competitive prices.
         </p>
       ),
     },
     {
       key: "3",
-      label: "Can you pay cash on SoloTaxis?",
+      label: "Can you pay cash on Solo Taxis?",
       children: (
         <p className="faq-answer">
           Yes, we offer both cash and card payment options for your convenience.
@@ -38,17 +38,17 @@ const Faq = () => {
     },
     {
       key: "4",
-      label: "Is SoloTaxis available 24/7 in Sheffield?",
+      label: "Is Solo Taxis available 24/7 in Sheffield?",
       children: (
         <p className="faq-answer">
-          Yes, SoloTaxis operates 24/7 in Sheffield, ensuring you can get a ride whenever
+          Yes, Solo Taxis operates 24/7 in Sheffield, ensuring you can get a ride whenever
           you need one, day or night.
         </p>
       ),
     },
     {
       key: "5",
-      label: "How do I contact SoloTaxis if I have a question?",
+      label: "How do I contact Solo Taxis if I have a question?",
       children: (
         <p className="faq-answer">
           Call us at{" "}
@@ -60,23 +60,17 @@ const Faq = () => {
   ];
 
   return (
-    <section className=" my-16" id="faq">
+    <section className="py-16" id="faq">
       <div className="max-w-3xl mx-auto px-4 flex flex-col gap-10">
-        
-        {/* Header */}
         <div className="text-center flex flex-col items-center gap-2">
-          <span className="text-xs font-medium px-3 py-1 rounded-full tracking-wide uppercase" style={{ background: "var(--surface-soft)", color: "var(--accent)", border: "0.5px solid var(--accent-border)" }}>
-            FAQs
-          </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+          <span className="section-eyebrow">FAQs</span>
+          <h2 className="section-heading">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-500 text-base max-w-lg">
+          <p className="text-muted text-base max-w-lg">
             Got questions? We've got answers. Here's everything you need to know.
           </p>
         </div>
-
-        {/* Collapse */}
         <Collapse
           accordion
           items={items}

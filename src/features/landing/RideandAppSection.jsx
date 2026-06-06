@@ -2,13 +2,12 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import PhoneImg from "../../assets/mobileApp.svg";
 import CarImg   from "../../assets/car.png";
+import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL } from "../../shared/constants/brand";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const PHONE_RAW       = "01144634444";
 const PHONE_DISPLAY   = "0114 463 4444";
-const APP_STORE_URL   = "https://apps.apple.com/app/solotaxis";
-const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/solotaxis";
 
 // ─── Ride Section Stats ───────────────────────────────────────────────────────
 
@@ -42,21 +41,17 @@ function Eyebrow({ icon, children }) {
 
 // ─── Store Buttons ────────────────────────────────────────────────────────────
 
-function StoreButton({ href, icon, label, sub, dark = false }) {
+function StoreButton({ href, icon, label, sub }) {
   return (
     <Button
       href={href}
-      ariaLabel={`Download SoloTaxis on ${label}`}
+      ariaLabel={`Download ${BRAND_NAME} — ${label}`}
       icon={icon}
-      className={`inline-flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)
-        ${dark
-          ? "bg-(--surface-white-soft) border-(--surface-white-soft-border) hover:bg-(--surface-white-soft-strong) text-(--hero-primary-text)"
-          : "bg-(--text-b) border-(--text-b) hover:bg-surface-dark-strong text-(--hero-primary-text)"
-        }`}
+      className="btn-primary inline-flex items-center gap-3 !py-3 !px-5"
       iconClass="shrink-0 h-5 w-5"
     >
       <div className="text-left">
-        <p className="text-[9px] tracking-wider uppercase text-hero-primary-soft">{sub}</p>
+        <p className="text-[9px] tracking-wider uppercase opacity-90">{sub}</p>
         <p className="text-[13px] font-semibold leading-tight">{label}</p>
       </div>
     </Button>
@@ -69,15 +64,13 @@ function PhoneButton() {
   return (
     <Button
       href={`tel:${PHONE_RAW}`}
-      ariaLabel={`Call SoloTaxis — ${PHONE_DISPLAY}`}
-      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-(--border) bg-(--hero-primary-text) hover:border-(--accent-border) hover:shadow-sm transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) group"
+      ariaLabel={`Call ${BRAND_NAME} — ${PHONE_DISPLAY}`}
+      className="btn-primary inline-flex items-center gap-3 !py-3 !px-5"
     >
-      <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-surface-soft">
-        <Icon icon="ph:phone-call" width={16} className="text-(--accent)" aria-hidden="true" />
-      </span>
-      <div>
-        <p className="text-[9px] tracking-wider uppercase text-muted">Call to book</p>
-        <p className="text-[13px] font-semibold text-(--text-b)">{PHONE_DISPLAY}</p>
+      <Icon icon="ph:phone-call-fill" width={16} aria-hidden="true" />
+      <div className="text-left">
+        <p className="text-[9px] tracking-wider uppercase opacity-90">Call to book</p>
+        <p className="text-[13px] font-semibold leading-tight">{PHONE_DISPLAY}</p>
       </div>
     </Button>
   );
@@ -87,7 +80,7 @@ function PhoneButton() {
 
 export function RideSection() {
   return (
-    <section aria-labelledby="ride-heading" className="bg-surface-white py-24 px-4 overflow-hidden">
+    <section aria-labelledby="ride-heading" className="py-24 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
 
@@ -103,10 +96,7 @@ export function RideSection() {
             {/* Stat pills — floating */}
             <div className="absolute top-4 left-0 z-10 flex flex-col gap-2">
               {RIDE_STATS.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-2.5 bg-(--hero-primary-text) border border-(--border) shadow-sm rounded-2xl px-3.5 py-2.5"
-                >
+                <div key={s.label} className="flex items-center gap-2.5 card px-3.5 py-2.5">
                   <span className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-surface-soft">
                     <Icon icon={s.icon} width={14} className="text-(--accent)" aria-hidden="true" />
                   </span>
@@ -120,7 +110,7 @@ export function RideSection() {
 
             <img
               src={CarImg}
-              alt="SoloTaxis vehicle ready for pickup in Sheffield"
+              alt={`${BRAND_NAME} vehicle ready for pickup in Sheffield`}
               className="relative z-10 w-full max-w-md drop-shadow-xl"
             />
           </div>
@@ -129,17 +119,13 @@ export function RideSection() {
           <div className="flex-1">
             <Eyebrow icon="ph:map-pin">Sheffield's #1 Taxi Service</Eyebrow>
 
-            <h2
-              id="ride-heading"
-              className="text-(--text-display-lg) lg:text-(--text-display-xl) font-bold text-(--text-b) tracking-tight leading-[1.1] mb-5"
-            >
+            <h2 id="ride-heading" className="section-heading mb-5">
               Ride anywhere <br />
-              with{" "}
-              <span className="text-accent">SoloTaxis</span>
+              with <span className="text-accent">{BRAND_NAME}</span>
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-relaxed mb-3 max-w-md">
-              SoloTaxis partners with hundreds of local driver-partners across Sheffield,
+              {BRAND_NAME} partners with hundreds of local driver-partners across Sheffield,
               ready to take you to your destination safely and comfortably — around the clock.
             </p>
             <p className="text-(--text-body-xs) text-muted leading-relaxed mb-8 max-w-md">
@@ -151,7 +137,7 @@ export function RideSection() {
             <div className="flex flex-wrap gap-3">
               <PhoneButton />
               <StoreButton
-                href={APP_STORE_URL}
+                href="/app"
                 icon="ph:download-simple"
                 label="Download App"
                 sub="Get the"
@@ -171,7 +157,7 @@ export function AppSection() {
   return (
     <section
       aria-labelledby="app-heading"
-      className="relative py-24 px-4 overflow-hidden bg-surface-dark"
+      className="relative py-24 px-4 overflow-hidden section-band"
     >
       {/* Subtle dot-grid background */}
       <div
@@ -213,17 +199,21 @@ export function AppSection() {
               Our app puts Sheffield's best drivers at your fingertips. Request instantly,
               track in real-time, and pay however you like. Download on the{" "}
               <a
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
+              >
+                Google Play Store
+              </a>{" "}
+              or the{" "}
+              <a
                 href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
               >
                 App Store
-              </a>{" "}
-              or{" "}
-              <a
-                href={GOOGLE_PLAY_URL}
-                className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
-              >
-                Google Play
               </a>
               .
             </p>
@@ -253,14 +243,12 @@ export function AppSection() {
                 icon="ph:apple-logo"
                 label="App Store"
                 sub="Download on the"
-                dark
               />
               <StoreButton
                 href={GOOGLE_PLAY_URL}
                 icon="ph:google-play-logo"
                 label="Google Play"
                 sub="Get it on"
-                dark
               />
             </div>
           </div>
@@ -298,7 +286,7 @@ export function AppSection() {
 
             <img
               src={PhoneImg}
-              alt="SoloTaxis mobile app showing live driver tracking"
+              alt={`${BRAND_NAME} mobile app showing live driver tracking`}
               className="relative z-10 w-64 lg:w-72 drop-shadow-2xl rounded-3xl"
             />
           </div>

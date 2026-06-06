@@ -2,11 +2,10 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
 import AppStoreBadge from "../../assets/soloTaxis-ios-app.webp";
+import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
-const APP_STORE_URL = "https://apps.apple.com/app/solotaxis";
-const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/solotaxis";
 const CURRENT_YEAR = new Date().getFullYear();
 
 /** Four footer navigation columns */
@@ -44,7 +43,7 @@ const NAV_COLUMNS = [
   {
     label: "About",
     links: [
-      { label: "About soloTaxis", href: "/about"         },
+      { label: `About ${BRAND_NAME}`, href: "/about"         },
       { label: "Our history",     href: "/about/history" },
       { label: "Brands",          href: "/brands"        },
       { label: "Partners",        href: "/partners"      },
@@ -66,22 +65,22 @@ const LEGAL_LINKS = [
 /** Social media channels */
 const SOCIAL_LINKS = [
   {
-    label: "soloTaxis on Facebook",
-    href: "https://facebook.com/solotaxis",
+    label: `${BRAND_NAME} on Facebook`,
+    href: FACEBOOK_URL,
     icon: "ph:facebook-logo",
   },
   {
-    label: "soloTaxis on X (Twitter)",
+    label: `${BRAND_NAME} on X (Twitter)`,
     href: "https://x.com/solotaxis",
     icon: "ph:x-logo",
   },
   {
-    label: "soloTaxis on Instagram",
-    href: "https://instagram.com/solotaxis",
+    label: `${BRAND_NAME} on Instagram`,
+    href: INSTAGRAM_URL,
     icon: "ph:instagram-logo",
   },
   {
-    label: "soloTaxis on LinkedIn",
+    label: `${BRAND_NAME} on LinkedIn`,
     href: "https://linkedin.com/company/solotaxis",
     icon: "ph:linkedin-logo",
   },
@@ -89,26 +88,25 @@ const SOCIAL_LINKS = [
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-/** soloTaxis wordmark */
+/** Solo Taxis wordmark */
 function FooterLogo() {
   return (
     <a
       href="/"
-      aria-label="soloTaxis — back to homepage"
-      className="select-none focus-visible:outline-none focus-visible:ring-2"
+      aria-label={`${BRAND_NAME} — back to homepage`}
+      className="select-none focus-visible:outline-none focus-visible:ring-2 font-display"
       style={{
-        fontFamily: "var(--heading)",
         fontSize: "var(--text-footer-logo)",
-        fontWeight: "var(--weight-extrabold)",
+        fontWeight: 700,
         letterSpacing: "var(--tracking-tight)",
-        color: "var(--bg)",
+        color: "var(--footer-text-hover)",
         borderRadius: "var(--radius-sm)",
         "--tw-ring-color": "var(--accent)",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
     >
-      soloTaxis
-      <span aria-hidden="true" style={{ color: "var(--accent)" }}>.</span>
+      {BRAND_NAME}
+      <span aria-hidden="true" style={{ color: "var(--color-primary)" }}>.</span>
     </a>
   );
 }
@@ -120,7 +118,7 @@ function AppStoreButton() {
       href={APP_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
-      ariaLabel="Download soloTaxis on the App Store"
+      ariaLabel={`Download ${BRAND_NAME} on the App Store`}
       icon="ph:apple-logo"
       imgSrc={GooglePlayBadge}
       iconClass="w-5.5 h-5.5"
@@ -157,7 +155,7 @@ function GooglePlayButton() {
       href={GOOGLE_PLAY_URL}
       target="_blank"
       rel="noopener noreferrer"
-      ariaLabel="Get soloTaxis on Google Play"
+      ariaLabel={`Get ${BRAND_NAME} on Google Play`}
       className="transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       style={{
         padding: "var(--space-2_5) var(--space-4)",
@@ -201,12 +199,12 @@ function NavColumn({ label, links }) {
   return (
     <div>
       <h3
-        className="focus-visible:outline-none focus-visible:ring-2"
+        className="font-display focus-visible:outline-none focus-visible:ring-2"
         style={{
           color: "var(--footer-text-muted)",
-          fontSize: "var(--text-footer-caption)",
-          letterSpacing: "var(--tracking-footer-label)",
-          fontWeight: "var(--weight-medium)",
+          fontSize: "14px",
+          letterSpacing: "0.1em",
+          fontWeight: 600,
           textTransform: "uppercase",
           marginBottom: "var(--space-4)"
         }}
@@ -220,15 +218,13 @@ function NavColumn({ label, links }) {
               href={href}
               className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
-                color: "var(--bg)",
+                color: "var(--footer-text-muted)",
                 fontSize: "var(--text-footer-link)",
                 fontWeight: "var(--weight-regular)",
                 borderRadius: "var(--radius-sm)",
-                "--tw-ring-color": "var(--accent)",
-                "--tw-ring-offset-color": "var(--footer-bg)"
               }}
               onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--bg)")}
+              onMouseLeave={(e) => (e.target.style.color = "var(--footer-text-muted)")}
             >
               {linkLabel}
             </a>
@@ -291,7 +287,7 @@ export function StickyBookBar() {
     >
       <Button
         href={`tel:${PHONE_RAW}`}
-        ariaLabel={`Call soloTaxis on ${PHONE_DISPLAY}`}
+        ariaLabel={`Call ${BRAND_NAME} on ${PHONE_DISPLAY}`}
         icon="ph:phone-call"
         iconClass="w-3.75 h-3.75"
         className="flex-1 rounded-lg justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
@@ -315,7 +311,7 @@ export function StickyBookBar() {
       </Button>
       <Button
         href={APP_STORE_URL}
-        ariaLabel="Download the soloTaxis app"
+        ariaLabel={`Download the ${BRAND_NAME} app`}
         icon="ph:download-simple"
         iconClass="w-3.75 h-3.75"
         className="flex-1 rounded-lg justify-center border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
@@ -360,7 +356,7 @@ export default function Footer() {
         <div
           className="flex flex-col sm:flex-row"
           style={{ gap: "var(--space-3)" }}
-          aria-label="Download the soloTaxis app"
+          aria-label={`Download the ${BRAND_NAME} app`}
         >
           <AppStoreButton />
           <GooglePlayButton />
@@ -384,6 +380,7 @@ export default function Footer() {
       </nav>
 
       {/* ── Bottom bar: copyright + legal + social ── */}
+      <div className="footer-copyright-bar">
       <div
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between flex-wrap"
         style={{
@@ -394,7 +391,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p style={{ color: "var(--footer-text-muted)", fontSize: "var(--text-footer-legal)" }}>
-          &copy; {CURRENT_YEAR} soloTaxis Ltd. All rights reserved.
+          &copy; {CURRENT_YEAR} {BRAND_NAME} Ltd. All rights reserved.
         </p>
 
         {/* Legal links */}
@@ -432,6 +429,7 @@ export default function Footer() {
           ))}
         </div>
 
+      </div>
       </div>
     </footer>
   );
