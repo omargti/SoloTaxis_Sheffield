@@ -60,23 +60,17 @@ const Faq = () => {
   ];
 
   return (
-    <section className=" my-16" id="faq">
+    <section className="py-16" id="faq">
       <div className="max-w-3xl mx-auto px-4 flex flex-col gap-10">
-        
-        {/* Header */}
         <div className="text-center flex flex-col items-center gap-2">
-          <span className="text-xs font-medium px-3 py-1 rounded-full tracking-wide uppercase" style={{ background: "var(--surface-soft)", color: "var(--accent)", border: "0.5px solid var(--accent-border)" }}>
-            FAQs
-          </span>
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+          <span className="section-eyebrow">FAQs</span>
+          <h2 className="section-heading">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-500 text-base max-w-lg">
+          <p className="text-muted text-base max-w-lg">
             Got questions? We've got answers. Here's everything you need to know.
           </p>
         </div>
-
-        {/* Collapse */}
         <Collapse
           accordion
           items={items}

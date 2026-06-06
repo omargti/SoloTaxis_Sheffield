@@ -86,7 +86,7 @@ function PhoneButton() {
 
 export function RideSection() {
   return (
-    <section aria-labelledby="ride-heading" className="bg-surface-white py-24 px-4 overflow-hidden">
+    <section aria-labelledby="ride-heading" className="py-24 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
 
@@ -102,10 +102,7 @@ export function RideSection() {
             {/* Stat pills — floating */}
             <div className="absolute top-4 left-0 z-10 flex flex-col gap-2">
               {RIDE_STATS.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-2.5 bg-(--hero-primary-text) border border-(--border) shadow-sm rounded-2xl px-3.5 py-2.5"
-                >
+                <div key={s.label} className="flex items-center gap-2.5 card px-3.5 py-2.5">
                   <span className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-surface-soft">
                     <Icon icon={s.icon} width={14} className="text-(--accent)" aria-hidden="true" />
                   </span>
@@ -128,13 +125,9 @@ export function RideSection() {
           <div className="flex-1">
             <Eyebrow icon="ph:map-pin">Sheffield's #1 Taxi Service</Eyebrow>
 
-            <h2
-              id="ride-heading"
-              className="text-(--text-display-lg) lg:text-(--text-display-xl) font-bold text-(--text-b) tracking-tight leading-[1.1] mb-5"
-            >
+            <h2 id="ride-heading" className="section-heading mb-5">
               Ride anywhere <br />
-              with{" "}
-              <span className="text-accent">{BRAND_NAME}</span>
+              with <span className="text-accent">{BRAND_NAME}</span>
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-relaxed mb-3 max-w-md">
@@ -170,7 +163,7 @@ export function AppSection() {
   return (
     <section
       aria-labelledby="app-heading"
-      className="relative py-24 px-4 overflow-hidden bg-surface-dark"
+      className="relative py-24 px-4 overflow-hidden bg-[var(--color-bg)]"
     >
       {/* Subtle dot-grid background */}
       <div

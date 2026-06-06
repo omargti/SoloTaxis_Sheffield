@@ -94,20 +94,19 @@ function FooterLogo() {
     <a
       href="/"
       aria-label={`${BRAND_NAME} — back to homepage`}
-      className="select-none focus-visible:outline-none focus-visible:ring-2"
+      className="select-none focus-visible:outline-none focus-visible:ring-2 font-display"
       style={{
-        fontFamily: "var(--heading)",
         fontSize: "var(--text-footer-logo)",
-        fontWeight: "var(--weight-extrabold)",
+        fontWeight: 700,
         letterSpacing: "var(--tracking-tight)",
-        color: "var(--bg)",
+        color: "var(--color-text-primary)",
         borderRadius: "var(--radius-sm)",
         "--tw-ring-color": "var(--accent)",
         "--tw-ring-offset-color": "var(--footer-bg)"
       }}
     >
       {BRAND_NAME}
-      <span aria-hidden="true" style={{ color: "var(--accent)" }}>.</span>
+      <span aria-hidden="true" style={{ color: "var(--color-primary)" }}>.</span>
     </a>
   );
 }
@@ -200,12 +199,12 @@ function NavColumn({ label, links }) {
   return (
     <div>
       <h3
-        className="focus-visible:outline-none focus-visible:ring-2"
+        className="font-display focus-visible:outline-none focus-visible:ring-2"
         style={{
-          color: "var(--footer-text-muted)",
-          fontSize: "var(--text-footer-caption)",
-          letterSpacing: "var(--tracking-footer-label)",
-          fontWeight: "var(--weight-medium)",
+          color: "var(--color-text-primary)",
+          fontSize: "14px",
+          letterSpacing: "0.1em",
+          fontWeight: 600,
           textTransform: "uppercase",
           marginBottom: "var(--space-4)"
         }}
@@ -219,15 +218,13 @@ function NavColumn({ label, links }) {
               href={href}
               className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
-                color: "var(--bg)",
+                color: "var(--color-text-muted)",
                 fontSize: "var(--text-footer-link)",
                 fontWeight: "var(--weight-regular)",
                 borderRadius: "var(--radius-sm)",
-                "--tw-ring-color": "var(--accent)",
-                "--tw-ring-offset-color": "var(--footer-bg)"
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--bg)")}
+              onMouseEnter={(e) => (e.target.style.color = "var(--color-text-primary)")}
+              onMouseLeave={(e) => (e.target.style.color = "var(--color-text-muted)")}
             >
               {linkLabel}
             </a>
@@ -383,6 +380,7 @@ export default function Footer() {
       </nav>
 
       {/* ── Bottom bar: copyright + legal + social ── */}
+      <div className="footer-copyright-bar">
       <div
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between flex-wrap"
         style={{
@@ -431,6 +429,7 @@ export default function Footer() {
           ))}
         </div>
 
+      </div>
       </div>
     </footer>
   );
