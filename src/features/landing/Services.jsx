@@ -4,37 +4,43 @@ import { Icon } from "@iconify/react";
 const services = [
   {
     title: "Ride",
-    description: "Go anywhere in Sheffield. Request a ride, hop in, and go.",
+    description:
+      "Need to get across Sheffield? Request a ride in seconds and we'll connect you with a licensed local driver — ready when you are.",
     icon: "ph:car-simple",
     link: "#ride",
   },
   {
     title: "Reserve",
-    description: "Book your ride in advance so you can relax on the day of your trip.",
+    description:
+      "Planning ahead? Schedule your pickup in advance and travel with complete peace of mind, whether it's a morning commute or a special occasion.",
     icon: "ph:calendar-check",
     link: "#reserve",
   },
   {
     title: "Airport Transfers",
-    description: "Reliable transfers to and from all major airports.",
+    description:
+      "Start or finish your journey stress-free. We offer reliable airport runs with fixed fares, flight tracking, and plenty of room for luggage.",
     icon: "ph:airplane-takeoff",
     link: "#airport",
   },
   {
     title: "Corporate",
-    description: "Business accounts and professional rides for your team.",
+    description:
+      "Keep your team moving smoothly. Our corporate accounts offer priority booking, consolidated invoicing, and professional service your business can rely on.",
     icon: "ph:briefcase",
     link: "#corporate",
   },
   {
     title: "Courier",
-    description: "Same-day item delivery across Sheffield, fast and easy.",
+    description:
+      "Send parcels and documents across Sheffield quickly and securely. Same-day delivery with live tracking and friendly, trusted drivers.",
     icon: "ph:package",
     link: "#courier",
   },
   {
     title: "Events & Tours",
-    description: "Get to events safely with a ride you can always count on.",
+    description:
+      "Heading to a match, concert, or night out? Enjoy safe, comfortable travel to and from events — so you can focus on the fun.",
     icon: "ph:ticket",
     link: "#events",
   },

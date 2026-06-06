@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import BG_IMAGE from "../../assets/sheffield.png";
+import { APP_STORE_URL } from "../../shared/constants/brand";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -122,19 +123,21 @@ export default function HeroSection() {
 
           {/* App Button */}
           <Button
-            href="/download"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             ariaLabel="Download mobile app"
-            className="inline-flex items-center gap-[var(--space-4)] bg-button-secondary text-hero-primary px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] border border-hero-button backdrop-blur-hero-button font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300"
+            className="inline-flex items-center gap-[var(--space-4)] bg-white text-[var(--text-b)] px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] border border-white/30 shadow-lg font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--surface-soft)] hover:border-[var(--accent-border)]"
           >
-            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-hero-icon-bg flex items-center justify-center">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-[var(--accent-soft)] flex items-center justify-center text-[var(--accent)]">
               <Icon icon="ph:device-mobile-fill" width={20} />
             </span>
 
             <div>
-              <p className="hero-app-label uppercase tracking-[var(--tracking-wide)] m-0">
+              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-[var(--text-grey)]">
                 Mobile App
               </p>
-              <p className="hero-button-copy m-0">
+              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-[var(--text-b)]">
                 Download
               </p>
             </div>

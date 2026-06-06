@@ -96,26 +96,26 @@ const NavLink = memo(({ href, label, active }) => {
 const BookBtn = memo(({ compact = false, onClick }) => (
   <Button
     onClick={onClick}
-    ariaLabel="Book a ride"
-    icon="ph:phone-call"
+    ariaLabel="Book a ride online"
+    icon="ph:calendar-check-fill"
     iconClass={compact ? "w-3.5 h-3.5" : "w-3.5 h-3.5"}
-    className="flex p-3 items-center gap-1.5 rounded-md border-[1.5px] font-medium
+    className="flex p-3 items-center gap-1.5 rounded-md font-medium
       transition-all duration-150 active:scale-95 focus-visible:outline-none
       focus-visible:ring-2 focus-visible:ring-offset-2"
     style={{
-      borderColor: "var(--text-b)",
-      color: "var(--text-b)",
-      backgroundColor: "var(--bg)",
+      borderColor: "var(--accent)",
+      color: "var(--bg)",
+      backgroundColor: "var(--accent)",
       fontSize: compact ? "var(--text-body-xs)" : "var(--text-body-sm)",
-      "--tw-ring-color": "var(--text-b)"
+      "--tw-ring-color": "var(--accent)"
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.backgroundColor = "var(--text-b)";
-      e.currentTarget.style.color = "var(--bg)";
+      e.currentTarget.style.backgroundColor = "var(--accent-hover)";
+      e.currentTarget.style.borderColor = "var(--accent-hover)";
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.backgroundColor = "var(--bg)";
-      e.currentTarget.style.color = "var(--text-b)";
+      e.currentTarget.style.backgroundColor = "var(--accent)";
+      e.currentTarget.style.borderColor = "var(--accent)";
     }}
   >
     {compact ? "Book" : "Book a ride"}
@@ -227,7 +227,7 @@ export default function Navbar() {
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 h-14 border-b" style={{ borderColor: "var(--border)" }}>
               <span className="font-bold" style={{ color: "var(--text-b)" }}>
-                Solo<span style={{ color: "var(--accent)" }}>Taxis</span>
+                Solo <span style={{ color: "var(--accent)" }}>Taxis</span>
               </span>
               <button
                 onClick={close}
@@ -272,18 +272,18 @@ export default function Navbar() {
             <div className="px-4 py-4 border-t" style={{ borderColor: "var(--border)" }}>
               <Button
                 onClick={goBook}
-                ariaLabel="Book a ride"
-                icon="ph:phone-call"
+                ariaLabel="Book a ride online"
+                icon="ph:calendar-check-fill"
                 iconClass="w-3.75 h-3.75"
                 className="w-full py-2.5 rounded-lg font-medium transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{
-                  backgroundColor: "var(--text-b)",
+                  backgroundColor: "var(--accent)",
                   color: "var(--bg)",
                   fontSize: "var(--text-body-sm)",
-                  "--tw-ring-color": "var(--text-b)"
+                  "--tw-ring-color": "var(--accent)"
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.8)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--text-b)")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--accent)")}
               >
                 Book a ride
               </Button>
