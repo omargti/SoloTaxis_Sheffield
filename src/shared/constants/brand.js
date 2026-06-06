@@ -13,3 +13,10 @@ export const FACEBOOK_URL =
   "https://www.facebook.com/profile.php?id=61585831762796";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/solotaxisltd/";
+
+export const DRIVER_APPLY_EMAIL = "drivers@solotaxis.com";
+
+export const DRIVER_FORM_ENDPOINT =
+  import.meta.env.VITE_DRIVER_FORM_ENDPOINT ||
+  `https://formsubmit.co/ajax/${DRIVER_APPLY_EMAIL}`;
+
