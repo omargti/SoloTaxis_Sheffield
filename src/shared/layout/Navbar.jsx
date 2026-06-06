@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Button from "../ui/button";
 import Logo from "../../assets/logoo.png";
+import { PHONE_DISPLAY, PHONE_RAW } from "../constants/brand";
 
 // ─── Constants ────────────────────────────────────────────────────────────
 
@@ -93,6 +94,24 @@ const NavLink = memo(({ href, label, active }) => {
   );
 });
 
+const PhoneLink = memo(({ compact = false }) => (
+  <a
+    href={`tel:${PHONE_RAW}`}
+    aria-label={`Call Solo Taxis on ${PHONE_DISPLAY}`}
+    className="inline-flex items-center gap-2 font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-md"
+    style={{
+      color: "var(--text-b)",
+      fontSize: compact ? "var(--text-body-xs)" : "var(--text-body-sm)",
+      "--tw-ring-color": "var(--accent)",
+    }}
+    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-b)")}
+  >
+    <Icon icon="ph:phone-call-fill" width={compact ? 16 : 18} aria-hidden="true" style={{ color: "var(--accent)" }} />
+    {!compact && <span>{PHONE_DISPLAY}</span>}
+  </a>
+));
+
 const BookBtn = memo(({ compact = false, onClick }) => (
   <Button
     onClick={onClick}
@@ -179,12 +198,14 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center ml-auto">
+          <div className="hidden lg:flex items-center ml-auto gap-5">
+            <PhoneLink />
             <BookBtn onClick={goBook} />
           </div>
 
-          {/* Mobile: compact book + hamburger */}
+          {/* Mobile: phone + compact book + hamburger */}
           <div className="flex lg:hidden items-center ml-auto gap-2">
+            <PhoneLink compact />
             <BookBtn compact onClick={goBook} />
             <button
               onClick={toggle}
@@ -269,7 +290,20 @@ export default function Navbar() {
             </nav>
 
             {/* Drawer CTA */}
-            <div className="px-4 py-4 border-t" style={{ borderColor: "var(--border)" }}>
+            <div className="px-4 py-4 border-t flex flex-col gap-3" style={{ borderColor: "var(--border)" }}>
+              <a
+                href={`tel:${PHONE_RAW}`}
+                aria-label={`Call Solo Taxis on ${PHONE_DISPLAY}`}
+                className="flex items-center justify-center gap-2 py-2.5 rounded-lg border font-medium transition-colors"
+                style={{
+                  borderColor: "var(--border)",
+                  color: "var(--text-b)",
+                  fontSize: "var(--text-body-sm)",
+                }}
+              >
+                <Icon icon="ph:phone-call-fill" width={16} style={{ color: "var(--accent)" }} aria-hidden="true" />
+                {PHONE_DISPLAY}
+              </a>
               <Button
                 onClick={goBook}
                 ariaLabel="Book a ride online"

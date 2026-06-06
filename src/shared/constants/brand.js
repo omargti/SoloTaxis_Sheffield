@@ -1,5 +1,8 @@
 export const BRAND_NAME = "Solo Taxis";
 
+export const PHONE_RAW = "01144634444";
+export const PHONE_DISPLAY = "0114 463 4444";
+
 export const APP_STORE_URL =
   "https://apps.apple.com/gb/app/solo-taxis/id6754282801";
 
