@@ -46,12 +46,12 @@ function StoreBtn({ href, icon, label, sub }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="btn-secondary !py-3 !px-5"
+      className="btn-primary !py-3 !px-5 inline-flex items-center gap-3"
     >
       <Icon icon={icon} width={20} className="shrink-0" aria-hidden="true" />
       <div className="text-left">
-        <p className="text-[10px] text-muted leading-none mb-0.5">Download on</p>
-        <p className="text-[13px] font-semibold text-[var(--color-text-primary)] leading-none">{sub}</p>
+        <p className="text-[10px] uppercase tracking-wider opacity-90 leading-none mb-0.5">Download on</p>
+        <p className="text-[13px] font-semibold leading-none">{sub}</p>
       </div>
     </a>
   );
@@ -191,7 +191,7 @@ function DriverPanel() {
       {/* CTA */}
       <div className="relative z-10">
         <a href={DRIVE_APPLY_URL} aria-label={`Apply to drive with ${BRAND_NAME}`}
-          className="btn-primary !bg-[var(--color-text-primary)] !text-[var(--color-primary)] hover:!bg-[var(--color-text-muted)] group">
+          className="btn-primary group inline-flex items-center gap-2.5">
           Apply to drive
           <Icon
             icon="ph:arrow-right"

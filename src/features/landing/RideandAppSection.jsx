@@ -41,21 +41,17 @@ function Eyebrow({ icon, children }) {
 
 // ─── Store Buttons ────────────────────────────────────────────────────────────
 
-function StoreButton({ href, icon, label, sub, dark = false }) {
+function StoreButton({ href, icon, label, sub }) {
   return (
     <Button
       href={href}
-      ariaLabel={`Download ${BRAND_NAME} on ${label}`}
+      ariaLabel={`Download ${BRAND_NAME} — ${label}`}
       icon={icon}
-      className={`inline-flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)
-        ${dark
-          ? "bg-(--surface-white-soft) border-(--surface-white-soft-border) hover:bg-(--surface-white-soft-strong) text-(--hero-primary-text)"
-          : "bg-(--text-b) border-(--text-b) hover:bg-surface-dark-strong text-(--hero-primary-text)"
-        }`}
+      className="btn-primary inline-flex items-center gap-3 !py-3 !px-5"
       iconClass="shrink-0 h-5 w-5"
     >
       <div className="text-left">
-        <p className="text-[9px] tracking-wider uppercase text-hero-primary-soft">{sub}</p>
+        <p className="text-[9px] tracking-wider uppercase opacity-90">{sub}</p>
         <p className="text-[13px] font-semibold leading-tight">{label}</p>
       </div>
     </Button>
@@ -69,14 +65,12 @@ function PhoneButton() {
     <Button
       href={`tel:${PHONE_RAW}`}
       ariaLabel={`Call ${BRAND_NAME} — ${PHONE_DISPLAY}`}
-      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-(--border) bg-(--hero-primary-text) hover:border-(--accent-border) hover:shadow-sm transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) group"
+      className="btn-primary inline-flex items-center gap-3 !py-3 !px-5"
     >
-      <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-surface-soft">
-        <Icon icon="ph:phone-call" width={16} className="text-(--accent)" aria-hidden="true" />
-      </span>
-      <div>
-        <p className="text-[9px] tracking-wider uppercase text-muted">Call to book</p>
-        <p className="text-[13px] font-semibold text-(--text-b)">{PHONE_DISPLAY}</p>
+      <Icon icon="ph:phone-call-fill" width={16} aria-hidden="true" />
+      <div className="text-left">
+        <p className="text-[9px] tracking-wider uppercase opacity-90">Call to book</p>
+        <p className="text-[13px] font-semibold leading-tight">{PHONE_DISPLAY}</p>
       </div>
     </Button>
   );
@@ -249,14 +243,12 @@ export function AppSection() {
                 icon="ph:apple-logo"
                 label="App Store"
                 sub="Download on the"
-                dark
               />
               <StoreButton
                 href={GOOGLE_PLAY_URL}
                 icon="ph:google-play-logo"
                 label="Google Play"
                 sub="Get it on"
-                dark
               />
             </div>
           </div>

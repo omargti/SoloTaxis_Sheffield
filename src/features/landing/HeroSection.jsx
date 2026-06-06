@@ -109,11 +109,11 @@ export default function HeroSection() {
               <Button
                 href="/app"
                 ariaLabel="Download mobile app"
-                className="btn-secondary w-full justify-start gap-4 !rounded-[4px]"
+                className="btn-primary w-full justify-start gap-4 !rounded-[4px]"
               >
                 <Icon icon="ph:device-mobile-fill" width={20} aria-hidden="true" />
                 <span className="flex flex-col items-start leading-tight">
-                  <span className="text-[10px] uppercase tracking-wider opacity-80">Mobile App</span>
+                  <span className="text-[10px] uppercase tracking-wider opacity-90">Mobile App</span>
                   <span className="text-base font-semibold">Download</span>
                 </span>
               </Button>
