@@ -8,3 +8,8 @@ export const APP_STORE_URL =
 
 export const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.taxicaller.SoloTaxis.app&pcampaignid=web_share";
+
+export const FACEBOOK_URL =
+  "https://www.facebook.com/profile.php?id=61585831762796";
+
+export const INSTAGRAM_URL = "https://www.instagram.com/solotaxisltd/";

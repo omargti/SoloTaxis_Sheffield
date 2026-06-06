@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
 import AppStoreBadge from "../../assets/soloTaxis-ios-app.webp";
-import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL } from "../constants/brand";
+import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
@@ -66,7 +66,7 @@ const LEGAL_LINKS = [
 const SOCIAL_LINKS = [
   {
     label: `${BRAND_NAME} on Facebook`,
-    href: "https://facebook.com/solotaxis",
+    href: FACEBOOK_URL,
     icon: "ph:facebook-logo",
   },
   {
@@ -76,7 +76,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: `${BRAND_NAME} on Instagram`,
-    href: "https://instagram.com/solotaxis",
+    href: INSTAGRAM_URL,
     icon: "ph:instagram-logo",
   },
   {

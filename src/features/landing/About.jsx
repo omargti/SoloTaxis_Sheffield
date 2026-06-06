@@ -49,20 +49,24 @@ const About = () => {
             </span>
 
             <h2 className="section-heading mb-5">
-              Sheffield's most <br className="hidden sm:block" />
-              <span className="text-accent">trusted</span> taxi service
+              Your local <br className="hidden sm:block" />
+              <span className="text-accent">Sheffield</span> taxi firm
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-4)]">
-              Solo Taxis is Sheffield's most trusted taxi and private hire service,
-              with hundreds of active driver-partners on the road every day.
+              Solo Taxis is a locally based taxi and private hire company serving Sheffield
+              and the surrounding area. We are proud to be part of the community we serve — connecting
+              passengers with licensed, professional drivers who know the city inside and out.
+            </p>
+            <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-4)]">
+              Whether you need a quick ride across town, a pre-booked airport transfer, or a
+              reliable lift home after a night out, we make getting around simple. Book by phone,
+              online, or through our app — and enjoy fixed, transparent fares with service you
+              can count on, 24 hours a day.
             </p>
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-8)]">
-              Our tech-driven, on-demand mobility platform supports our{' '}
-              <strong className="font-[var(--weight-semibold)] text-(--accent)">
-                local Sheffield community
-              </strong>
-              , helping passengers and drivers thrive — 24 hours a day, 7 days a week.
+              At Solo Taxis, we believe great taxi service starts locally: friendly drivers,
+              fair pricing, and a team that is always here when Sheffield needs us.
             </p>
 
             {/* Stats grid */}
