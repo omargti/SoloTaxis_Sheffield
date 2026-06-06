@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import AboutImg from "../../assets/about.png";
 import Button from "../../shared/ui/button";
+import { ABOUT_SECTION_ID } from "../../shared/utils/scrollToSection";
 
 const STATS = [
   { value: "500+", label: "Driver Partners",  icon: "ph:steering-wheel" },
@@ -11,7 +12,7 @@ const STATS = [
 
 const About = () => {
   return (
-    <section className="py-20 px-4" id="about">
+    <section className="py-20 px-4" id={ABOUT_SECTION_ID}>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-[var(--space-14)]">
 

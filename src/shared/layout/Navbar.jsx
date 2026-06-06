@@ -5,12 +5,13 @@ import { Icon } from "@iconify/react";
 import Button from "../ui/button";
 import Logo from "../../assets/logoo.png";
 import { PHONE_DISPLAY, PHONE_RAW } from "../constants/brand";
+import { ABOUT_SECTION_ID, navigateToSection } from "../utils/scrollToSection";
 
 const LINKS = [
   { label: "Ride",     href: "/ride",     icon: "ph:car" },
   { label: "Drive",    href: "/drive",    icon: "ph:steering-wheel" },
   { label: "Business", href: "/business", icon: "ph:briefcase" },
-  { label: "About",    href: "/about",    icon: "ph:info" },
+  { label: "About",    href: `/#${ABOUT_SECTION_ID}`, icon: "ph:info", sectionId: ABOUT_SECTION_ID },
 ];
 
 function useScrolled(threshold = 8) {
@@ -51,13 +52,21 @@ function useFocusTrap(ref, active) {
   }, [active, ref]);
 }
 
-const NavLink = memo(({ href, label, active }) => {
+const NavLink = memo(({ href, label, active, sectionId }) => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   return (
     <a
       href={href}
       aria-current={active ? "page" : undefined}
-      onClick={(e) => { e.preventDefault(); navigate(href); }}
+      onClick={(e) => {
+        e.preventDefault();
+        if (sectionId) {
+          navigateToSection(navigate, pathname, sectionId);
+        } else {
+          navigate(href);
+        }
+      }}
       className={`nav-link px-5 ${active ? "text-[var(--color-text-primary)]" : ""}`}
     >
       {label}
@@ -128,9 +137,9 @@ export default function Navbar() {
           </a>
 
           <ul className="hidden lg:flex items-center list-none m-0 p-0 ml-4">
-            {LINKS.map(({ label, href }) => (
+            {LINKS.map(({ label, href, sectionId }) => (
               <li key={href}>
-                <NavLink href={href} label={label} active={pathname === href} />
+                <NavLink href={href} label={label} active={pathname === href} sectionId={sectionId} />
               </li>
             ))}
           </ul>
@@ -185,10 +194,17 @@ export default function Navbar() {
 
             <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto px-3 py-4">
               <ul role="list" className="space-y-1 list-none p-0 m-0">
-                {LINKS.map(({ label, href, icon }) => (
+                {LINKS.map(({ label, href, icon, sectionId }) => (
                   <li key={href}>
                     <button
-                      onClick={() => { close(); navigate(href); }}
+                      onClick={() => {
+                        close();
+                        if (sectionId) {
+                          navigateToSection(navigate, pathname, sectionId);
+                        } else {
+                          navigate(href);
+                        }
+                      }}
                       aria-current={pathname === href ? "page" : undefined}
                       className="w-full flex items-center gap-3 px-3 py-3 rounded-[4px] nav-link !normal-case !text-sm min-h-[44px]"
                       style={{

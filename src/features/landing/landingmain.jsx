@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { scrollToSection } from '../../shared/utils/scrollToSection'
 import HeroSection from './HeroSection'
 import Services from './Services'
 import { RideSection } from './RideandAppSection'
@@ -8,6 +10,14 @@ import DownloadDriveSection from './AppDownloadBanner'
 import Faq from './Faqs'
 
 const LandingMain = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      scrollToSection(location.hash.replace("#", ""));
+    }
+  }, [location.hash]);
+
   return (
   
        <div>

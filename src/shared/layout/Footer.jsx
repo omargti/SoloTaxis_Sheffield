@@ -3,6 +3,7 @@ import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
 import AppStoreBadge from "../../assets/soloTaxis-ios-app.webp";
 import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
+import { ABOUT_SECTION_ID } from "../utils/scrollToSection";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
@@ -43,7 +44,7 @@ const NAV_COLUMNS = [
   {
     label: "About",
     links: [
-      { label: `About ${BRAND_NAME}`, href: "/about"         },
+      { label: `About ${BRAND_NAME}`, href: `/#${ABOUT_SECTION_ID}` },
       { label: "Our history",     href: "/about/history" },
       { label: "Brands",          href: "/brands"        },
       { label: "Partners",        href: "/partners"      },
