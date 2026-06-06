@@ -118,42 +118,43 @@ export default function HeroSection() {
             </div>
           </Button>
 
-          {/* App Button */}
+          {/* Book Online */}
           <Button
             href="/booking"
             ariaLabel="Book a ride online"
-            className="inline-flex items-center gap-[var(--space-4)] bg-accent text-white px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--accent-hover)]"
+            className="inline-flex items-center gap-[var(--space-4)] bg-white text-[var(--text-b)] px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] border border-white/30 shadow-lg font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--surface-soft)] hover:border-[var(--accent-border)]"
           >
-            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-black/20 flex items-center justify-center text-white">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-[var(--accent-soft)] flex items-center justify-center text-[var(--accent)]">
               <Icon icon="ph:calendar-check-fill" width={20} />
             </span>
 
-            <div className="text-white">
-              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-white/90">
+            <div>
+              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-[var(--text-grey)]">
                 Book Online
               </p>
-              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-white">
+              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-[var(--text-b)]">
                 Quick & easy
               </p>
             </div>
           </Button>
 
+          {/* Mobile App */}
           <Button
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             ariaLabel="Download mobile app"
-            className="inline-flex items-center gap-[var(--space-4)] bg-white text-[var(--text-b)] px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] border border-white/30 shadow-lg font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--surface-soft)] hover:border-[var(--accent-border)]"
+            className="inline-flex items-center gap-[var(--space-4)] bg-accent text-white px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--accent-hover)]"
           >
-            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-[var(--accent-soft)] flex items-center justify-center text-[var(--accent)]">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-black/20 flex items-center justify-center text-white">
               <Icon icon="ph:device-mobile-fill" width={20} />
             </span>
 
-            <div>
-              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-[var(--text-grey)]">
+            <div className="text-white">
+              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-white/90">
                 Mobile App
               </p>
-              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-[var(--text-b)]">
+              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-white">
                 Download
               </p>
             </div>
