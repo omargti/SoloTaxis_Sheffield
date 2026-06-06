@@ -8,10 +8,8 @@ import { PHONE_DISPLAY, PHONE_RAW } from "../constants/brand";
 import { ABOUT_SECTION_ID, navigateToSection } from "../utils/scrollToSection";
 
 const LINKS = [
-  { label: "Ride",     href: "/ride",     icon: "ph:car" },
-  { label: "Drive",    href: "/drive",    icon: "ph:steering-wheel" },
-  { label: "Business", href: "/business", icon: "ph:briefcase" },
-  { label: "About",    href: `/#${ABOUT_SECTION_ID}`, icon: "ph:info", sectionId: ABOUT_SECTION_ID },
+  { label: "About Us", href: `/#${ABOUT_SECTION_ID}`, icon: "ph:info", sectionId: ABOUT_SECTION_ID },
+  { label: "Join our team", href: "/drive/apply", icon: "ph:steering-wheel" },
 ];
 
 function useScrolled(threshold = 8) {
