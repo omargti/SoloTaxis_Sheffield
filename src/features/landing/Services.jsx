@@ -56,7 +56,7 @@ const Services = () => {
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
             Explore what you can do<br className="hidden sm:block" />
-            with <span style={{ color: "var(--accent)" }}>SoloTaxis</span>
+            with <span style={{ color: "var(--accent)" }}>Solo Taxis</span>
           </h2>
         </div>
 

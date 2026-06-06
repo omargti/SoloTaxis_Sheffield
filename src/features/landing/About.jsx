@@ -23,7 +23,7 @@ const About = () => {
 
             <img
               src={AboutImg}
-              alt="SoloTaxis team and fleet in Sheffield"
+              alt="Solo Taxis team and fleet in Sheffield"
               className="block w-full"
             />
 
@@ -54,7 +54,7 @@ const About = () => {
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-4)]">
-              SoloTaxis is Sheffield's most trusted taxi and private hire service,
+              Solo Taxis is Sheffield's most trusted taxi and private hire service,
               with hundreds of active driver-partners on the road every day.
             </p>
             <p className="text-(--text-body-sm) text-muted leading-[var(--leading-relaxed)] mb-[var(--space-8)]">
@@ -89,7 +89,7 @@ const About = () => {
               className="inline-flex items-center gap-[var(--space-2)] !text-white text-(--text-body-xs) font-[var(--weight-medium)] px-[var(--space-7)] py-[var(--space-3_5)] rounded-[var(--radius-xl)] transition-all duration-200 active:scale-95 bg-accent"
             >
               <Icon icon="ph:arrow-right" width={15} aria-hidden="true" />
-              More about SoloTaxis
+              More about Solo Taxis
             </Button>
 
           </div>

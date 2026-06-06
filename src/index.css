@@ -310,6 +310,15 @@
   -webkit-text-stroke: var(--hero-stroke-width) var(--hero-stroke);
 }
 
+.hero-accent-word {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--hero-primary-text);
+  line-height: 1.05;
+}
+
 .hero-label {
   font-size: var(--text-hero-label);
   color: var(--accent);

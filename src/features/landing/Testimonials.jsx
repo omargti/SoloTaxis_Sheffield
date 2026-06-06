@@ -13,7 +13,7 @@ const TESTIMONIALS = [
   {
     id: 1,
     featured: true,
-    text: "SoloTaxis has completely changed how I commute. The driver was early, the car was spotless, and I made my morning meeting with five minutes to spare. I've tried every taxi app in the city — none come close to this level of reliability. Absolute game changer.",
+    text: "Solo Taxis has completely changed how I commute. The driver was early, the car was spotless, and I made my morning meeting with five minutes to spare. I've tried every taxi app in the city — none come close to this level of reliability. Absolute game changer.",
     rating: 5,
     name: "Sarah Rahman",
     initials: "SR",
@@ -35,7 +35,7 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    text: "Used SoloTaxis for my whole team's airport transfers. Every single car showed up on time. Will 100% use again for company travel.",
+    text: "Used Solo Taxis for my whole team's airport transfers. Every single car showed up on time. Will 100% use again for company travel.",
     rating: 4.5,
     name: "Priya Kapoor",
     initials: "PK",
@@ -45,7 +45,7 @@ const TESTIMONIALS = [
   },
   {
     id: 4,
-    text: "The phone booking was so easy and the driver called ahead. My elderly mum uses SoloTaxis now — they treat her brilliantly every time.",
+    text: "The phone booking was so easy and the driver called ahead. My elderly mum uses Solo Taxis now — they treat her brilliantly every time.",
     rating: 5,
     name: "David Walsh",
     initials: "DW",
@@ -162,7 +162,7 @@ export default function Testimonials() {
           </span>
 
           <h2 id="testimonials-heading" className="fs-display-lg sm:fs-display-xl font-heading font-(--weight-bold) text-(--text-b) tracking-tight leading-none mb-(--space-3)">
-            Riders love <span className="text-(--accent)">SoloTaxis</span>
+            Riders love <span className="text-(--accent)">Solo Taxis</span>
           </h2>
 
           <p className="text-muted fs-body-sm max-w-sm mx-auto">

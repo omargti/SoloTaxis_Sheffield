@@ -166,7 +166,7 @@ export default function Navbar() {
             className="flex items-center pr-4 font-bold tracking-tight"
             style={{ color: "var(--text-b)" }}
           >
-            <img src={Logo} alt="SoloTaxis logo" className="h-16" />
+            <img src={Logo} alt="Solo Taxis logo" className="h-16" />
           </a>
 
           {/* Desktop links */}

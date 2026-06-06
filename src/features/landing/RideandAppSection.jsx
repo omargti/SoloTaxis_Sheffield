@@ -2,13 +2,12 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import PhoneImg from "../../assets/mobileApp.svg";
 import CarImg   from "../../assets/car.png";
+import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL } from "../../shared/constants/brand";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const PHONE_RAW       = "01144634444";
 const PHONE_DISPLAY   = "0114 463 4444";
-const APP_STORE_URL   = "https://apps.apple.com/app/solotaxis";
-const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/solotaxis";
 
 // ─── Ride Section Stats ───────────────────────────────────────────────────────
 
@@ -46,7 +45,7 @@ function StoreButton({ href, icon, label, sub, dark = false }) {
   return (
     <Button
       href={href}
-      ariaLabel={`Download SoloTaxis on ${label}`}
+      ariaLabel={`Download ${BRAND_NAME} on ${label}`}
       icon={icon}
       className={`inline-flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent)
         ${dark
@@ -69,7 +68,7 @@ function PhoneButton() {
   return (
     <Button
       href={`tel:${PHONE_RAW}`}
-      ariaLabel={`Call SoloTaxis — ${PHONE_DISPLAY}`}
+      ariaLabel={`Call ${BRAND_NAME} — ${PHONE_DISPLAY}`}
       className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-(--border) bg-(--hero-primary-text) hover:border-(--accent-border) hover:shadow-sm transition-all duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) group"
     >
       <span className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-surface-soft">
@@ -120,7 +119,7 @@ export function RideSection() {
 
             <img
               src={CarImg}
-              alt="SoloTaxis vehicle ready for pickup in Sheffield"
+              alt={`${BRAND_NAME} vehicle ready for pickup in Sheffield`}
               className="relative z-10 w-full max-w-md drop-shadow-xl"
             />
           </div>
@@ -135,11 +134,11 @@ export function RideSection() {
             >
               Ride anywhere <br />
               with{" "}
-              <span className="text-accent">SoloTaxis</span>
+              <span className="text-accent">{BRAND_NAME}</span>
             </h2>
 
             <p className="text-(--text-body-sm) text-muted leading-relaxed mb-3 max-w-md">
-              SoloTaxis partners with hundreds of local driver-partners across Sheffield,
+              {BRAND_NAME} partners with hundreds of local driver-partners across Sheffield,
               ready to take you to your destination safely and comfortably — around the clock.
             </p>
             <p className="text-(--text-body-xs) text-muted leading-relaxed mb-8 max-w-md">
@@ -213,17 +212,21 @@ export function AppSection() {
               Our app puts Sheffield's best drivers at your fingertips. Request instantly,
               track in real-time, and pay however you like. Download on the{" "}
               <a
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
+              >
+                Google Play Store
+              </a>{" "}
+              or the{" "}
+              <a
                 href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
               >
                 App Store
-              </a>{" "}
-              or{" "}
-              <a
-                href={GOOGLE_PLAY_URL}
-                className="text-hero-primary-softer underline underline-offset-2 hover:text-(--hero-primary-text) transition-colors"
-              >
-                Google Play
               </a>
               .
             </p>
@@ -298,7 +301,7 @@ export function AppSection() {
 
             <img
               src={PhoneImg}
-              alt="SoloTaxis mobile app showing live driver tracking"
+              alt={`${BRAND_NAME} mobile app showing live driver tracking`}
               className="relative z-10 w-64 lg:w-72 drop-shadow-2xl rounded-3xl"
             />
           </div>

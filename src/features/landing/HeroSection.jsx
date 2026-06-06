@@ -86,7 +86,7 @@ export default function HeroSection() {
         {/* Heading */}
         <h1 className="max-w-4xl text-hero-primary font-heading font-[var(--weight-extrabold)] leading-[var(--hero-heading-line-height)] tracking-[var(--tracking-tight)] text-[clamp(var(--text-hero-heading-min),8vw,var(--text-hero-heading-max))]">
           Reliable Rides
-          <span className="block text-transparent stroke-text">
+          <span className="hero-accent-word block">
             Anytime.
           </span>
         </h1>
@@ -104,17 +104,17 @@ export default function HeroSection() {
           <Button
             href={`tel:${PHONE_RAW}`}
             ariaLabel="Call Sheffield Taxi Service"
-            className="inline-flex items-center gap-[var(--space-4)] bg-accent text-hero-primary px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300"
+            className="inline-flex items-center gap-[var(--space-4)] bg-accent text-white px-[var(--space-6)] py-[var(--space-4)] rounded-[var(--radius-xl)] font-[var(--weight-bold)] font-[var(--sans)] transition-all duration-300 hover:bg-[var(--accent-hover)]"
           >
-            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-hero-icon-bg-dark flex items-center justify-center">
+            <span className="w-[var(--hero-button-icon-size)] h-[var(--hero-button-icon-size)] rounded-xl bg-black/20 flex items-center justify-center text-white">
               <Icon icon="ph:phone-call-fill" width={20} />
             </span>
 
-            <div>
-              <p className="hero-button-label uppercase tracking-[var(--tracking-wide)] m-0">
+            <div className="text-white">
+              <p className="text-[var(--text-hero-button-label)] uppercase tracking-[var(--tracking-wide)] m-0 text-white/90">
                 Book Now
               </p>
-              <p className="hero-button-copy m-0">
+              <p className="text-[var(--text-hero-button-copy)] font-[var(--weight-extrabold)] m-0 text-white">
                 {PHONE_DISPLAY}
               </p>
             </div>
