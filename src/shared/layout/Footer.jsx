@@ -1,66 +1,25 @@
 import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
-import AppStoreBadge from "../../assets/soloTaxis-ios-app.webp";
 import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
-import { ABOUT_SECTION_ID } from "../utils/scrollToSection";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
 const CURRENT_YEAR = new Date().getFullYear();
 
-/** Four footer navigation columns */
-
-const NAV_COLUMNS = [
-  {
-    label: "Ride",
-    links: [
-      { label: "Ride",      href: "/ride"      },
-      { label: "Services",  href: "/services"  },
-      { label: "Locations", href: "/locations" },
-      { label: "Airports",  href: "/airports"  },
-      { label: "Help",      href: "/help"      },
-      { label: "Feedback",  href: "/feedback"  },
-      { label: "Students",  href: "/students"  },
-    ],
-  },
-  {
-    label: "Business",
-    links: [
-      { label: "Business",          href: "/business"           },
-      { label: "Corporate accounts", href: "/business/corporate" },
-      { label: "Events transport",   href: "/business/events"    },
-    ],
-  },
-  {
-    label: "Drive",
-    links: [
-      { label: "Drive",            href: "/drive"              },
-      { label: "Become a driver",  href: "/drive/apply"        },
-      { label: "Requirements",     href: "/drive/requirements" },
-      { label: "Earnings",         href: "/drive/earnings"     },
-    ],
-  },
-  {
-    label: "About",
-    links: [
-      { label: `About ${BRAND_NAME}`, href: `/#${ABOUT_SECTION_ID}` },
-      { label: "Our history",     href: "/about/history" },
-      { label: "Brands",          href: "/brands"        },
-      { label: "Partners",        href: "/partners"      },
-      { label: "App",             href: "/app"           },
-      { label: "Careers",         href: "/careers"       },
-      { label: "Press",           href: "/press"         },
-    ],
-  },
+const SERVICES = [
+  "Ride",
+  "Reserve",
+  "Airport Transfers",
+  "Corporate",
+  "Courier",
+  "Events & Tours",
 ];
 
 /** Legal / policy links in bottom bar */
 const LEGAL_LINKS = [
-  { label: "Privacy policy",   href: "/privacy"       },
-  { label: "Terms of service", href: "/terms"         },
-  { label: "Cookie settings",  href: "/cookies"       },
-  { label: "Accessibility",    href: "/accessibility" },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of service", href: "/terms" },
 ];
 
 /** Social media channels */
@@ -195,8 +154,8 @@ function GooglePlayButton() {
   );
 }
 
-/** Single navigation column */
-function NavColumn({ label, links }) {
+/** Services offered — displayed as bullet points */
+function ServicesList() {
   return (
     <div>
       <h3
@@ -207,29 +166,14 @@ function NavColumn({ label, links }) {
           letterSpacing: "0.1em",
           fontWeight: 600,
           textTransform: "uppercase",
-          marginBottom: "var(--space-4)"
+          marginBottom: "var(--space-4)",
         }}
       >
-        {label}
+        Our Services
       </h3>
-      <ul role="list" className="flex flex-col" style={{ gap: "var(--space-2_5)" }}>
-        {links.map(({ label: linkLabel, href }) => (
-          <li key={href}>
-            <a
-              href={href}
-              className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              style={{
-                color: "var(--footer-text-muted)",
-                fontSize: "var(--text-footer-link)",
-                fontWeight: "var(--weight-regular)",
-                borderRadius: "var(--radius-sm)",
-              }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--footer-text-muted)")}
-            >
-              {linkLabel}
-            </a>
-          </li>
+      <ul role="list" className="footer-services">
+        {SERVICES.map((service) => (
+          <li key={service}>{service}</li>
         ))}
       </ul>
     </div>
@@ -364,21 +308,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Navigation columns ── */}
-      <nav
-        aria-label="Footer navigation"
+      {/* ── Services ── */}
+      <section
+        aria-label="Services offered"
         className="max-w-6xl mx-auto"
         style={{
           padding: "var(--space-10) var(--space-8)",
-          borderBottom: "1px solid var(--footer-border)"
+          borderBottom: "1px solid var(--footer-border)",
         }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-4" style={{ gap: "var(--space-10)" }}>
-          {NAV_COLUMNS.map((col) => (
-            <NavColumn key={col.label} label={col.label} links={col.links} />
-          ))}
-        </div>
-      </nav>
+        <ServicesList />
+      </section>
 
       {/* ── Bottom bar: copyright + legal + social ── */}
       <div className="footer-copyright-bar">
