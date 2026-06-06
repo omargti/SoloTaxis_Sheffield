@@ -572,6 +572,30 @@ a:hover {
   color: var(--color-primary);
 }
 
+.footer-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer-info-grid {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+.footer-link {
+  color: var(--footer-text-muted);
+  font-size: var(--text-footer-link);
+  font-weight: var(--weight-regular);
+  border-radius: var(--radius-sm);
+}
+
+.footer-link:hover {
+  color: var(--footer-text-hover);
+}
+
 @media (min-width: 640px) {
   .footer-services {
     grid-template-columns: repeat(3, minmax(0, 1fr));

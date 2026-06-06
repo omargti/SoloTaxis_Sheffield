@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
 import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
+import { ABOUT_SECTION_ID } from "../utils/scrollToSection";
 
 const PHONE_RAW = "01179252626";
 const PHONE_DISPLAY = "01179 25 26 26";
@@ -151,6 +152,37 @@ function GooglePlayButton() {
         </span>
       </span>
     </Button>
+  );
+}
+
+/** About link — scrolls to homepage About Us section */
+function AboutLink() {
+  return (
+    <div>
+      <h3
+        className="font-display focus-visible:outline-none focus-visible:ring-2"
+        style={{
+          color: "var(--footer-text-muted)",
+          fontSize: "14px",
+          letterSpacing: "0.1em",
+          fontWeight: 600,
+          textTransform: "uppercase",
+          marginBottom: "var(--space-4)",
+        }}
+      >
+        About
+      </h3>
+      <ul role="list" className="flex flex-col" style={{ gap: "var(--space-2_5)" }}>
+        <li>
+          <a
+            href={`/#${ABOUT_SECTION_ID}`}
+            className="footer-link transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            About Us
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 }
 
@@ -310,14 +342,15 @@ export default function Footer() {
 
       {/* ── Services ── */}
       <section
-        aria-label="Services offered"
-        className="max-w-6xl mx-auto"
+        aria-label="Services and about"
+        className="max-w-6xl mx-auto footer-info-grid"
         style={{
           padding: "var(--space-10) var(--space-8)",
           borderBottom: "1px solid var(--footer-border)",
         }}
       >
         <ServicesList />
+        <AboutLink />
       </section>
 
       {/* ── Bottom bar: copyright + legal + social ── */}
