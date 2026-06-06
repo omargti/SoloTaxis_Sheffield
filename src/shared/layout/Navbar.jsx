@@ -124,7 +124,7 @@ export default function Navbar() {
             aria-label="Home"
             className="flex items-center shrink-0"
           >
-            <img src={Logo} alt="Solo Taxis logo" className="h-12 logo-white" />
+            <img src={Logo} alt="Solo Taxis logo" className="h-12" />
           </a>
 
           <ul className="hidden lg:flex items-center list-none m-0 p-0 ml-4">

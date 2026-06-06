@@ -126,7 +126,7 @@ const StatCard = memo(({ stat }) => (
 
 export default function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 bg-[var(--color-surface)]" aria-labelledby="testimonials-heading">
+    <section className="py-20 px-4 sm:px-6 section-band" aria-labelledby="testimonials-heading">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-11">
           <span className="section-eyebrow mb-4">

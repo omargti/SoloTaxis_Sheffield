@@ -5,16 +5,23 @@
    ═══════════════════════════════════════ */
 
 :root {
-  /* Brand palette — sole colour source */
-  --color-primary:      #C41E1E;
-  --color-primary-dark: #9E1515;
-  --color-bg:           #0A0A0A;
-  --color-surface:      #141414;
-  --color-surface-2:    #1E1E1E;
-  --color-border:       #2A2A2A;
-  --color-text-primary: #FFFFFF;
-  --color-text-muted:   #9A9A9A;
-  --color-accent-red:   #FF3232;
+  /* Brand palette — refined light theme with warm neutrals */
+  --color-primary:      #B91C1C;
+  --color-primary-dark: #991B1B;
+  --color-bg:           #F5F4F1;
+  --color-surface:      #FFFFFF;
+  --color-surface-2:    #EDECEA;
+  --color-border:       #DDD9D4;
+  --color-text-primary: #1A1A1F;
+  --color-text-muted:   #5C5C66;
+  --color-accent-red:   #DC2626;
+  --color-on-primary:   #FFFFFF;
+
+  /* Hero (dark photo overlay — separate from page theme) */
+  --hero-fg:            #FFFFFF;
+  --hero-fg-muted:      rgba(255, 255, 255, 0.78);
+  --hero-fg-soft:       rgba(255, 255, 255, 0.55);
+  --hero-accent:        #F87171;
 
   /* Typography */
   --font-display: 'Barlow Condensed', sans-serif;
@@ -30,32 +37,32 @@
   --border:            var(--color-border);
   --accent:            var(--color-primary);
   --accent-hover:      var(--color-primary-dark);
-  --accent-soft:       rgba(196, 30, 30, 0.12);
-  --accent-border:     rgba(196, 30, 30, 0.35);
-  --accent-soft-strong:rgba(196, 30, 30, 0.2);
+  --accent-soft:       rgba(185, 28, 28, 0.08);
+  --accent-border:     rgba(185, 28, 28, 0.22);
+  --accent-soft-strong:rgba(185, 28, 28, 0.14);
   --surface-soft:      var(--color-surface-2);
   --surface-white:     var(--color-surface);
-  --surface-white-soft:rgba(255, 255, 255, 0.06);
+  --surface-white-soft:rgba(26, 26, 31, 0.04);
   --surface-white-soft-border: var(--color-border);
-  --surface-white-soft-strong: rgba(255, 255, 255, 0.1);
-  --surface-dark:      var(--color-surface);
-  --surface-dark-strong: rgba(0, 0, 0, 0.6);
+  --surface-white-soft-strong: rgba(26, 26, 31, 0.06);
+  --surface-dark:      #1A1A1F;
+  --surface-dark-strong: rgba(26, 26, 31, 0.92);
   --button-secondary:  transparent;
-  --button-secondary-hover: rgba(196, 30, 30, 0.08);
-  --hero-overlay:      linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 100%);
-  --hero-gradient-start: rgba(10, 10, 10, 0.92);
-  --hero-gradient-mid:   rgba(10, 10, 10, 0.65);
-  --hero-gradient-end:   rgba(10, 10, 10, 0.35);
-  --hero-glow:           rgba(196, 30, 30, 0.15);
-  --hero-primary-text:   var(--color-text-primary);
-  --hero-primary-text-soft: rgba(255, 255, 255, 0.45);
-  --hero-primary-text-softer: rgba(255, 255, 255, 0.65);
-  --hero-muted-text:     var(--color-text-muted);
-  --hero-muted-on-dark:  var(--color-text-muted);
-  --hero-badge-text:     var(--color-text-muted);
-  --hero-scrollhint:     var(--color-text-muted);
-  --hero-icon-bg:        var(--color-surface-2);
-  --hero-icon-bg-dark:   rgba(0, 0, 0, 0.25);
+  --button-secondary-hover: rgba(185, 28, 28, 0.06);
+  --hero-overlay:      linear-gradient(135deg, rgba(26,26,31,0.82) 0%, rgba(26,26,31,0.45) 100%);
+  --hero-gradient-start: rgba(26, 26, 31, 0.88);
+  --hero-gradient-mid:   rgba(26, 26, 31, 0.55);
+  --hero-gradient-end:   rgba(26, 26, 31, 0.25);
+  --hero-glow:           rgba(185, 28, 28, 0.12);
+  --hero-primary-text:   var(--hero-fg);
+  --hero-primary-text-soft: var(--hero-fg-soft);
+  --hero-primary-text-softer: var(--hero-fg-muted);
+  --hero-muted-text:     var(--hero-fg-muted);
+  --hero-muted-on-dark:  var(--hero-fg-muted);
+  --hero-badge-text:     var(--hero-fg-soft);
+  --hero-scrollhint:     var(--hero-fg-soft);
+  --hero-icon-bg:        rgba(255, 255, 255, 0.12);
+  --hero-icon-bg-dark:   rgba(0, 0, 0, 0.2);
   --hero-button-border:  var(--color-border);
   --hero-button-icon-size: 2.75rem;
   --hero-heading-line-height: 1;
@@ -66,21 +73,21 @@
   --text-hero-button-copy: 1.125rem;
   --text-hero-label: 0.6875rem;
 
-  --footer-bg:           #000000;
-  --footer-border:       var(--color-border);
-  --footer-text-muted:   var(--color-text-muted);
-  --footer-text-hover:   var(--color-text-primary);
-  --footer-social-border:var(--color-border);
+  --footer-bg:           #1A1A1F;
+  --footer-border:       rgba(255, 255, 255, 0.1);
+  --footer-text-muted:   rgba(255, 255, 255, 0.55);
+  --footer-text-hover:   #FFFFFF;
+  --footer-social-border:rgba(255, 255, 255, 0.15);
   --footer-cta-bg:       transparent;
-  --footer-cta-text:     var(--color-primary);
+  --footer-cta-text:     #FFFFFF;
   --footer-cta-border:   var(--color-primary);
-  --footer-cta-muted:    var(--color-text-muted);
-  --footer-text-muted-soft: var(--color-text-muted);
-  --footer-social-icon:  var(--color-text-muted);
-  --footer-social-hover: var(--color-text-primary);
+  --footer-cta-muted:    rgba(255, 255, 255, 0.55);
+  --footer-text-muted-soft: rgba(255, 255, 255, 0.45);
+  --footer-social-icon:  rgba(255, 255, 255, 0.55);
+  --footer-social-hover: #FFFFFF;
   --footer-social-size:  2.75rem;
   --footer-social-border-hover: var(--color-primary);
-  --footer-social-bg-hover: rgba(196, 30, 30, 0.08);
+  --footer-social-bg-hover: rgba(185, 28, 28, 0.15);
   --footer-quickbar-bg:  var(--color-surface);
   --footer-quickbar-border: var(--color-border);
   --footer-button-min-width: 9.25rem;
@@ -99,10 +106,10 @@
   --avatar-teal:       var(--color-text-primary);
   --avatar-teal-soft:  var(--color-surface-2);
 
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --radius-sm: 4px;
-  --radius-lg: 8px;
-  --radius-xl: 8px;
+  --shadow: 0 4px 20px rgba(26, 26, 31, 0.07);
+  --radius-sm: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
   --radius-full: 9999px;
 
   --text-display-2xl: 4.5rem;
@@ -224,9 +231,9 @@ a:hover {
   justify-content: center;
   gap: 0.5rem;
   background: var(--color-primary);
-  color: var(--color-text-primary);
+  color: var(--color-on-primary);
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: var(--font-body);
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -250,19 +257,19 @@ a:hover {
   background: transparent;
   border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: var(--font-body);
   font-weight: 500;
   letter-spacing: 0.03em;
   padding: 14px 28px;
   min-height: 44px;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 .btn-secondary:hover,
 .btn-ghost:hover {
-  background: rgba(196, 30, 30, 0.08);
+  background: var(--accent-soft);
   transform: translateY(-1px);
 }
 
@@ -270,7 +277,7 @@ a:hover {
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: var(--shadow);
 }
 
@@ -278,22 +285,25 @@ a:hover {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-top: 3px solid var(--color-primary);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 28px;
+  box-shadow: 0 8px 32px rgba(26, 26, 31, 0.12);
 }
 
 .service-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 28px 24px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  box-shadow: var(--shadow);
 }
 
 .service-card:hover {
   border-color: var(--color-primary);
   transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(185, 28, 28, 0.1);
 }
 
 /* ─── Typography utilities ─── */
@@ -347,7 +357,8 @@ a:hover {
 
 .site-header.scrolled {
   backdrop-filter: blur(12px);
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 0 var(--color-border);
 }
 
 .nav-link {
@@ -369,7 +380,7 @@ a:hover {
 }
 
 .logo-white {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 /* ─── Hero ─── */
@@ -379,10 +390,11 @@ a:hover {
   align-items: center;
   position: relative;
   overflow: hidden;
+  color: var(--hero-fg);
 }
 
 .hero-overlay-gradient {
-  background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 100%);
+  background: linear-gradient(135deg, rgba(26,26,31,0.82) 0%, rgba(26,26,31,0.48) 100%);
 }
 
 .hero-headline {
@@ -391,7 +403,7 @@ a:hover {
   font-size: clamp(32px, 7vw, 80px);
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  color: var(--color-text-primary);
+  color: var(--hero-fg);
   line-height: 1;
 }
 
@@ -399,7 +411,7 @@ a:hover {
   font-family: var(--font-display);
   font-weight: 600;
   font-style: normal;
-  color: var(--color-primary);
+  color: var(--hero-accent);
   letter-spacing: -0.01em;
 }
 
@@ -413,7 +425,7 @@ a:hover {
 .hero-subhead {
   font-family: var(--font-body);
   font-weight: 400;
-  color: var(--color-text-muted);
+  color: var(--hero-fg-muted);
   max-width: 520px;
   font-size: var(--text-body-sm);
   line-height: var(--leading-relaxed);
@@ -421,17 +433,17 @@ a:hover {
 
 .hero-label {
   font-size: var(--text-hero-label);
-  color: var(--color-primary);
+  color: var(--hero-accent);
 }
 
 .hero-body {
   font-size: var(--text-body-sm);
-  color: var(--color-text-muted);
+  color: var(--hero-fg-muted);
 }
 
 .hero-badge {
   font-size: var(--text-overline);
-  color: var(--color-text-muted);
+  color: var(--hero-fg-soft);
 }
 
 .trust-row {
@@ -456,7 +468,7 @@ a:hover {
 .bg-surface-soft { background-color: var(--color-surface-2); }
 .bg-surface-white { background-color: var(--color-surface); }
 .bg-surface-white-soft { background-color: var(--color-surface-2); }
-.bg-surface-white-soft-strong { background-color: rgba(255,255,255,0.08); }
+.bg-surface-white-soft-strong { background-color: rgba(26, 26, 31, 0.04); }
 .bg-accent { background-color: var(--color-primary); }
 .bg-accent-soft-strong { background-color: var(--accent-soft-strong); }
 .bg-button-secondary { background-color: transparent; }
@@ -468,7 +480,7 @@ a:hover {
 .bg-hero-icon-bg { background-color: var(--color-surface-2); }
 .bg-hero-icon-bg-dark { background-color: rgba(0,0,0,0.25); }
 .bg-dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(26, 26, 31, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 .bg-surface-dark-strong { background-color: var(--surface-dark-strong); }
@@ -498,7 +510,11 @@ a:hover {
 
 /* ─── Testimonials ─── */
 .testimonial-quote {
-  color: rgba(196, 30, 30, 0.15);
+  color: rgba(185, 28, 28, 0.12);
+}
+
+.section-band {
+  background: var(--color-surface-2);
 }
 
 /* ─── FAQs (Ant Design dark overrides) ─── */
@@ -531,9 +547,9 @@ a:hover {
 
 /* ─── Footer copyright bar ─── */
 .footer-copyright-bar {
-  background: #050505;
+  background: #141418;
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 1024px) {

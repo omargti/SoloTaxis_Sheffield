@@ -99,7 +99,7 @@ function FooterLogo() {
         fontSize: "var(--text-footer-logo)",
         fontWeight: 700,
         letterSpacing: "var(--tracking-tight)",
-        color: "var(--color-text-primary)",
+        color: "var(--footer-text-hover)",
         borderRadius: "var(--radius-sm)",
         "--tw-ring-color": "var(--accent)",
         "--tw-ring-offset-color": "var(--footer-bg)"
@@ -201,7 +201,7 @@ function NavColumn({ label, links }) {
       <h3
         className="font-display focus-visible:outline-none focus-visible:ring-2"
         style={{
-          color: "var(--color-text-primary)",
+          color: "var(--footer-text-muted)",
           fontSize: "14px",
           letterSpacing: "0.1em",
           fontWeight: 600,
@@ -218,13 +218,13 @@ function NavColumn({ label, links }) {
               href={href}
               className="transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
-                color: "var(--color-text-muted)",
+                color: "var(--footer-text-muted)",
                 fontSize: "var(--text-footer-link)",
                 fontWeight: "var(--weight-regular)",
                 borderRadius: "var(--radius-sm)",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--color-text-primary)")}
-              onMouseLeave={(e) => (e.target.style.color = "var(--color-text-muted)")}
+              onMouseEnter={(e) => (e.target.style.color = "var(--footer-text-hover)")}
+              onMouseLeave={(e) => (e.target.style.color = "var(--footer-text-muted)")}
             >
               {linkLabel}
             </a>

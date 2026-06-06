@@ -163,7 +163,7 @@ export function AppSection() {
   return (
     <section
       aria-labelledby="app-heading"
-      className="relative py-24 px-4 overflow-hidden bg-[var(--color-bg)]"
+      className="relative py-24 px-4 overflow-hidden section-band"
     >
       {/* Subtle dot-grid background */}
       <div
