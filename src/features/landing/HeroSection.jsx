@@ -113,8 +113,8 @@ export default function HeroSection() {
               >
                 <Icon icon="ph:device-mobile-fill" width={20} aria-hidden="true" />
                 <span className="flex flex-col items-start leading-tight">
-                  <span className="text-[10px] uppercase tracking-wider opacity-90">Mobile App</span>
-                  <span className="text-base font-semibold">Download</span>
+                  <span className="text-[10px] uppercase tracking-wider opacity-90">Download app</span>
+                  <span className="text-base font-semibold">iOS &amp; Android</span>
                 </span>
               </Button>
             </div>

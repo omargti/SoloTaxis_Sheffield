@@ -1,11 +1,9 @@
 import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import GooglePlayBadge from "../../assets/google-playstore-android-app.webp";
-import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL } from "../constants/brand";
-import { ABOUT_SECTION_ID } from "../utils/scrollToSection";
+import { APP_STORE_URL, BRAND_NAME, FACEBOOK_URL, GOOGLE_PLAY_URL, INSTAGRAM_URL, PHONE_DISPLAY, PHONE_RAW } from "../constants/brand";
+import { NAV_LINKS } from "../constants/navigation";
 
-const PHONE_RAW = "01179252626";
-const PHONE_DISPLAY = "01179 25 26 26";
 const CURRENT_YEAR = new Date().getFullYear();
 
 const SERVICES = [
@@ -155,8 +153,8 @@ function GooglePlayButton() {
   );
 }
 
-/** About link — scrolls to homepage About Us section */
-function AboutLink() {
+/** Quick links — matches header navigation */
+function QuickLinks() {
   return (
     <div>
       <h3
@@ -170,17 +168,19 @@ function AboutLink() {
           marginBottom: "var(--space-4)",
         }}
       >
-        About
+        Quick links
       </h3>
       <ul role="list" className="flex flex-col" style={{ gap: "var(--space-2_5)" }}>
-        <li>
-          <a
-            href={`/#${ABOUT_SECTION_ID}`}
-            className="footer-link transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-          >
-            About Us
-          </a>
-        </li>
+        {NAV_LINKS.map(({ label, href }) => (
+          <li key={href}>
+            <a
+              href={href}
+              className="footer-link transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
@@ -287,7 +287,7 @@ export function StickyBookBar() {
         </span>
       </Button>
       <Button
-        href={APP_STORE_URL}
+        href="/app"
         ariaLabel={`Download the ${BRAND_NAME} app`}
         icon="ph:download-simple"
         iconClass="w-3.75 h-3.75"
@@ -342,7 +342,7 @@ export default function Footer() {
 
       {/* ── Services ── */}
       <section
-        aria-label="Services and about"
+        aria-label="Services and quick links"
         className="max-w-6xl mx-auto footer-info-grid"
         style={{
           padding: "var(--space-10) var(--space-8)",
@@ -350,7 +350,7 @@ export default function Footer() {
         }}
       >
         <ServicesList />
-        <AboutLink />
+        <QuickLinks />
       </section>
 
       {/* ── Bottom bar: copyright + legal + social ── */}

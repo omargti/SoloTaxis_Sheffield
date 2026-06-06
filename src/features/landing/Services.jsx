@@ -6,42 +6,42 @@ const services = [
     description:
       "Need to get across Sheffield? Request a ride in seconds and we'll connect you with a licensed local driver — ready when you are.",
     icon: "ph:car-simple",
-    link: "#ride",
+    link: "/booking",
   },
   {
     title: "Reserve",
     description:
       "Planning ahead? Schedule your pickup in advance and travel with complete peace of mind, whether it's a morning commute or a special occasion.",
     icon: "ph:calendar-check",
-    link: "#reserve",
+    link: "/booking",
   },
   {
     title: "Airport Transfers",
     description:
       "Start or finish your journey stress-free. We offer reliable airport runs with fixed fares, flight tracking, and plenty of room for luggage.",
     icon: "ph:airplane-takeoff",
-    link: "#airport",
+    link: "/booking",
   },
   {
     title: "Corporate",
     description:
       "Keep your team moving smoothly. Our corporate accounts offer priority booking, consolidated invoicing, and professional service your business can rely on.",
     icon: "ph:briefcase",
-    link: "#corporate",
+    link: "/booking",
   },
   {
     title: "Courier",
     description:
       "Send parcels and documents across Sheffield quickly and securely. Same-day delivery with live tracking and friendly, trusted drivers.",
     icon: "ph:package",
-    link: "#courier",
+    link: "/booking",
   },
   {
     title: "Events & Tours",
     description:
       "Heading to a match, concert, or night out? Enjoy safe, comfortable travel to and from events — so you can focus on the fun.",
     icon: "ph:ticket",
-    link: "#events",
+    link: "/booking",
   },
 ];
 
@@ -76,7 +76,7 @@ const Services = () => {
               </div>
 
               <a href={service.link} className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent w-fit">
-                Learn more
+                Book now
                 <Icon icon="ph:arrow-right" width={14} className="transition-transform duration-150 group-hover:translate-x-1" aria-hidden="true" />
               </a>
             </div>

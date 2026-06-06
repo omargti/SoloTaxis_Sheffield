@@ -5,12 +5,10 @@ import { Icon } from "@iconify/react";
 import Button from "../ui/button";
 import Logo from "../../assets/logoo.png";
 import { PHONE_DISPLAY, PHONE_RAW } from "../constants/brand";
-import { ABOUT_SECTION_ID, navigateToSection } from "../utils/scrollToSection";
+import { NAV_LINKS } from "../constants/navigation";
+import { navigateToSection } from "../utils/scrollToSection";
 
-const LINKS = [
-  { label: "About Us", href: `/#${ABOUT_SECTION_ID}`, icon: "ph:info", sectionId: ABOUT_SECTION_ID },
-  { label: "Join our team", href: "/drive/apply", icon: "ph:steering-wheel" },
-];
+const LINKS = NAV_LINKS;
 
 function useScrolled(threshold = 8) {
   const [scrolled, setScrolled] = useState(false);

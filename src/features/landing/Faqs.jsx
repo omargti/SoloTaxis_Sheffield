@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Collapse } from "antd";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import { PHONE_DISPLAY } from "../../shared/constants/brand";
 
 const Faq = () => {
   const [activeKey, setActiveKey] = useState(["1"]);
@@ -12,8 +13,8 @@ const Faq = () => {
       label: "How do I book a ride with Solo Taxis?",
       children: (
         <p className="faq-answer">
-          You can easily book a ride in Sheffield with the Solo Taxis app, or call us on{" "}
-          <span className="text-(--accent) font-medium">0114 463 4444</span>.
+          You can easily book a ride in Sheffield with the Solo Taxis app, online at our booking page, or call us on{" "}
+          <span className="text-(--accent) font-medium">{PHONE_DISPLAY}</span>.
         </p>
       ),
     },
@@ -52,7 +53,7 @@ const Faq = () => {
       children: (
         <p className="faq-answer">
           Call us at{" "}
-          <span className="text-(--accent) font-medium">0114 463 4444</span> or email{" "}
+          <span className="text-(--accent) font-medium">{PHONE_DISPLAY}</span> or email{" "}
           <span className="text-(--accent) font-medium">info@solotaxis.co.uk</span>.
         </p>
       ),

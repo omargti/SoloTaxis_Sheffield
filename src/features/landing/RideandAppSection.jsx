@@ -2,12 +2,7 @@ import { Icon } from "@iconify/react";
 import Button from "../../shared/ui/button";
 import PhoneImg from "../../assets/mobileApp.svg";
 import CarImg   from "../../assets/car.png";
-import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL } from "../../shared/constants/brand";
-
-// ─── Constants ────────────────────────────────────────────────────────────────
-
-const PHONE_RAW       = "01144634444";
-const PHONE_DISPLAY   = "0114 463 4444";
+import { APP_STORE_URL, BRAND_NAME, GOOGLE_PLAY_URL, PHONE_DISPLAY, PHONE_RAW } from "../../shared/constants/brand";
 
 // ─── Ride Section Stats ───────────────────────────────────────────────────────
 

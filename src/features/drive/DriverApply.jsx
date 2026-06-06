@@ -151,9 +151,9 @@ export default function DriverApply() {
         <header className="form-page__header">
           <span className="section-eyebrow mb-3">
             <Icon icon="ph:steering-wheel" width={12} aria-hidden="true" />
-            Drive with us
+            Join our team
           </span>
-          <h1 className="section-heading text-2xl sm:text-3xl mb-2">Apply to drive</h1>
+          <h1 className="section-heading text-2xl sm:text-3xl mb-2">Join our team</h1>
           <p className="form-page__intro">
             Join {BRAND_NAME} as a licensed driver partner in Sheffield. Complete the form below and
             we will email your application to our driver team at{" "}

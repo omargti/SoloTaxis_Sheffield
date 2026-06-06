@@ -86,9 +86,9 @@ const About = () => {
             </div>
 
             {/* CTA */}
-            <Button onClick={() => {}} className="btn-primary">
+            <Button href="/booking" className="btn-primary">
               <Icon icon="ph:arrow-right" width={15} aria-hidden="true" />
-              More about Solo Taxis
+              Book with us
             </Button>
 
           </div>

@@ -190,9 +190,9 @@ function DriverPanel() {
 
       {/* CTA */}
       <div className="relative z-10">
-        <a href={DRIVE_APPLY_URL} aria-label={`Apply to drive with ${BRAND_NAME}`}
+        <a href={DRIVE_APPLY_URL} aria-label={`Join our team at ${BRAND_NAME}`}
           className="btn-primary group inline-flex items-center gap-2.5">
-          Apply to drive
+          Join our team
           <Icon
             icon="ph:arrow-right"
             width={15}
